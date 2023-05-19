@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "632245118387",
+    "project_id": "jejaknesia-6e40e",
+    "storage_bucket": "jejaknesia-6e40e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632245118387:android:8c68677873f3001e7157c6",
+        "android_client_info": {
+          "package_name": "com.vanessaleo.destories"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "632245118387-b0tng5d8u7f91f3eu61pk7j80u627028.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHGld4mYrSJq8Wrii3nhyd2sI7BAFonpM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "632245118387-b0tng5d8u7f91f3eu61pk7j80u627028.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632245118387:android:d08fb464511bed287157c6",
+        "android_client_info": {
+          "package_name": "com.vanessaleo.jejaknesia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "632245118387-nb28pq0ggu1us53qmtmlps49m4h0p3e2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vanessaleo.jejaknesia",
+            "certificate_hash": "9ff7478dde8b75bee95e6aab26676494b7597b45"
+          }
+        },
+        {
+          "client_id": "632245118387-b0tng5d8u7f91f3eu61pk7j80u627028.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHGld4mYrSJq8Wrii3nhyd2sI7BAFonpM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "632245118387-b0tng5d8u7f91f3eu61pk7j80u627028.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

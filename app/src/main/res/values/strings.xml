@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Jejaknesia</string>
+    <string name="background_image">Background Image</string>
+    <string name="bg_text">Travel more,\nworry less</string>
+    <string name="get_started">Get Started</string>
+    <string name="tv_create_account">Create an account</string>
+    <string name="edit_text_name">Nama Lengkap</string>
+    <string name="edit_text_email">Email</string>
+    <string name="register">Register</string>
+    <string name="edit_text_password">Password</string>
+    <string name="already_have_account">Already have account?</string>
+    <string name="login_here">Login here</string>
+    <string name="tv_login_account">Log in to your account</string>
+    <string name="login">Login</string>
+    <string name="dont_have_account">Don\'t have account?</string>
+    <string name="register_here">Register here</string>
+    <string name="register_page">Register</string>
+    <string name="edit_text_retype_password">Ulangi Password</string>
+    <string name="signin_withgoogle">Atau masuk dengan</string>
+    <string name="login_page">Login</string>
+</resources>
