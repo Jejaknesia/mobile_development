@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.PreferenceActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+
+    <RadioGroup
+        android:id="@+id/atmosphere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/atmosphere" />
+
+        <RadioButton
+            android:id="@+id/rb_popular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/popular" />
+
+        <RadioButton
+            android:id="@+id/rb_balanced"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/balanced" />
+
+        <RadioButton
+            android:id="@+id/rb_hidden_gems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hidden_gems"
+            tools:checked="true" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/typical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/typical" />
+
+        <RadioButton
+            android:id="@+id/rb_slow_easy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/slow_easy"
+            tools:checked="true" />
+
+        <RadioButton
+            android:id="@+id/rb_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/medium" />
+
+        <RadioButton
+            android:id="@+id/rb_fast_paced"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fast_paced" />
+
+    </RadioGroup>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/choose_category" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+    <CheckBox
+        android:id="@+id/art_culture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/art_culture" />
+
+    <CheckBox
+        android:id="@+id/outdoor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/outdoor" />
+
+    <CheckBox
+        android:id="@+id/art_relaxing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/relaxing"
+        tools:checked="true"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/romance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/romance" />
+
+        <CheckBox
+            android:id="@+id/beach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/beach"
+            tools:checked="true" />
+
+        <CheckBox
+            android:id="@+id/lake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lake" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <CheckBox
+            android:id="@+id/mountain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mountain" />
+
+        <CheckBox
+            android:id="@+id/historical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/historical"
+            tools:checked="true"/>
+
+        <CheckBox
+            android:id="@+id/shopping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shopping" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <CheckBox
+            android:id="@+id/wildlife"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wildlife" />
+
+        <CheckBox
+            android:id="@+id/forest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/forest" />
+
+        <CheckBox
+            android:id="@+id/culinary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/culinary" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <CheckBox
+            android:id="@+id/water_activities"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/water_activities" />
+
+        <CheckBox
+            android:id="@+id/city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/city" />
+
+        <CheckBox
+            android:id="@+id/spiritual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/spiritual"
+            tools:checked="true"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_chosen_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:text="@string/generate_result" />
+
+    </LinearLayout>
+</ScrollView>

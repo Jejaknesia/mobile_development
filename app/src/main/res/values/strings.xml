@@ -18,4 +18,103 @@
     <string name="edit_text_retype_password">Ulangi Password</string>
     <string name="signin_withgoogle">Atau masuk dengan</string>
     <string name="login_page">Login</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_blog">Blog</string>
+    <string name="discover_blog">Discover popular blog here</string>
+    <string name="blog_page">Blog</string>
+    <string name="blog_item">Blog Item</string>
+    <string name="blog_title">Judul Blog</string>
+    <string name="blog_content">Isi konten blog</string>
+    <string name="blog">Blog</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="my_profile">My Profile</string>
+    <string name="home_page">Home</string>
+    <string name="welcome_name">Welcome, %1s</string>
+    <string name="explore_beautiful_world">Explore beautiful world</string>
+    <string name="text_only">We hope you can find what you are looking for!</string>
+    <string name="enter_destination">Masukkan destinasi</string>
+    <string name="itinerary_planner">Itinerary Planner</string>
+    <string name="departure_date">Masukkan tanggal pergi</string>
+    <string name="arrival_date">Masukkan tanggal pulang</string>
+    <string name="choose_your_preferences">Choose your preferences</string>
+    <string name="popular">Popular</string>
+    <string name="balanced">Balanced</string>
+    <string name="hidden_gems">Hidden Gems</string>
+    <string name="typical">Tipikal perjalanan apakah yang kamu sukai?</string>
+    <string name="slow_easy"><![CDATA[Slow & Easy]]></string>
+    <string name="medium">Medium</string>
+    <string name="fast_paced">Fast-paced</string>
+    <string name="atmosphere">Suasana apakah yang kamu sukai? (Ramai atau Tenang)</string>
+    <string name="art_culture"><![CDATA[Art & Culture]]></string>
+    <string name="outdoor">Outdoor</string>
+    <string name="relaxing">Relaxing</string>
+    <string name="romance">Romance</string>
+    <string name="beach">Beach</string>
+    <string name="lake">Lake</string>
+    <string name="mountain">Mountain</string>
+    <string name="historical">Historical</string>
+    <string name="shopping">Shopping</string>
+    <string name="wildlife">Wildlife</string>
+    <string name="forest">Forest</string>
+    <string name="culinary">Culinary</string>
+    <string name="water_activities">Water Act.</string>
+    <string name="city">City</string>
+    <string name="spiritual">Spiritual</string>
+    <string name="choose_category">Pilih kategori berdasarkan kriteria yang kamu inginkan ya!(Boleh lebih dari 1)</string>
+    <string name="add_result">Add result</string>
+    <string name="preference">Preference</string>
+    <string name="generate_result">Generate Result</string>
+    <string name="profile">Profile</string>
+    <string name="profile_image">profile_image</string>
+    <string name="logout">Logout</string>
+    <string name="publish_date">%1s</string>
+    <string name="blog_detail_page">Detail Blog</string>
+
+
+    <string-array name="data_title">
+        <item>4 Fakta Menarik Labuan Bajo, Kota Seribu Sunset</item>
+        <item>Alasan Kenapa Orang Lebih Pilih Solo Traveling Dibanding Rombongan</item>
+        <item>Inilah Kriteria Masyarakat Indonesia saat Liburan, Pilih yang Nyaman</item>
+        <item>Berlibur mengubah Anda menjadi orang yang lebih baik</item>
+        <item>Travelling ke Alam Membangun Edukasi Humanis</item>
+    </string-array>
+
+    <string-array name="data_written_by">
+        <item>Farid Maulana Faqih</item>
+        <item>Rina Anggraeni</item>
+        <item>Syifa Fauziah</item>
+        <item>Kaisa</item>
+        <item>Purwanto</item>
+    </string-array>
+
+    <string-array name="data_publish_date">
+        <item>16 Mei 2023</item>
+        <item>10 Mei 2023</item>
+        <item>21 Mei 2023</item>
+        <item>26 Mei 2023</item>
+        <item>17 April 2023</item>
+    </string-array>
+
+    <string-array name="data_content">
+        <item>1. Terdapat pulau kecil menyerupai angka 9.\n\nPulau tersebut terbentuk dari karang-karang yang mati, menumpuk, dan akhirnya menjadi pulau. Saat berkunjung ke sini, Anda tidak akan menemukan satu pun pepohonan yang tumbuh di pulau ini.\n\n\n2. Terdapat danau air asin.\n\nMasih seputaran Pulau Sembilan, ada bagian lubang yang menunjukkan bagian atas angka sembilan yang seolah seperti danau. Berada di tengah laut, menjadikan danau kecil ini berair asin. Hal ini yang menjadikannya berbeda dari yang lain karena biasanya danau berair tawar.\n\n\n3. Punya pantai dengan pasir berwarna merah muda.\n\nPantai satu ini pasti sudah dikenal luas baik oleh wisatawan lokal maupun internasional. Pasir di pantai ini yang berwarna merah muda (pink) menjadikannya unik dan menarik. Warna tersebut berasal dari hewan berukuran mikroskopis bernama Foraminifera yang memberikan pigmentasi merah pada koral.</item>
+        <item>Berdasarkan penelitian terbaru, tercatat 57 persen orang Amerika Serikat (AS) tertarik melakukan perjalanan solo ke kota lainnya.Faktanya, 66 persen orang Amerika telah melakukan perjalanan solonya. Tampaknya orang tertarik untuk traveling sendirian karena ingin bebas membuat itinerary dan tidak terpengaruh keinginan orang lain.\n\nMengutip laman Travepulse, setidaknya persen responden yang disurvei menghasilkan 37 persen lainnya mengatakan bahwa bepergian sendiri memudahkan mereka untuk bersantai dan menikmati liburan ketimbang membawa rombongan atau grup. Perjalanan solo juga merupakan pendorong kepercayaan diri yang besar bagi mereka. Selain itu 32 persen wanita mengatakan akan meningkatkan kepercayaan diri dan kemandirian mereka.\n\nAlasan tersebut diikuti oleh kesempatan untuk mengambil waktu istirahat sebesar 63 persen dan mengunjungi destinasi baru 37 persen. Sedangkan, kurang dari sepertiga atau 31 persen mengatakan kesempatan untuk bertemu orang baru bukan menjadi prioritas bersolo traveling.\n\nBerdasarkan alasan tersebut, sebanyak 41 persen orang memilih solo traveling dibandingkan tahun lalu. Sementara Chief Executive ABTA, Mark Tanzer menjelaskan banyak orang memilih berlibur seorang diri karena untuk meningkatkan kesehatan mental mereka.</item>
+        <item>Liburan jadi salah satu kebutuhan setiap orang. Dengan berlibur mereka bisa melepas penat setelah menjalankan berbagai aktivitas keseharian. Rupanya setiap orang memiliki kriteria saat liburan termasuk wisatawan Indonesia. Ketua Umum DPP Astindo, Pauline Suharno mengatakan, karakteristik masyarakat Indonesia saat liburan adalah mereka memilih destinasi yang nyaman.\n\n\"Orang Indonesia kalau bepergian holiday, kita maunya sesuatu yang nyaman. Jarang mau bersusah-susah, karena basicly orang Indonesia bukan orang adventure seperti orang luar negeri, kaya (wisatawan) Taiwan dan Hongkong, itu culture mereka (liburan adventure),\" ujar Pauline saat ditemui dalam acara konferensi pers #DiIndonesiaAja Travel Fair 2023 belum lama ini.\n\nHingga saat ini menurut Pauline, ada tiga destinasi wisata yang sudah menghadirkan kenyaman untuk wisatawan.\n\n\"Sejauh ini top 3 yah, Bali, Labuan Bajo dan Yogyakarta. Misalnya saja Bali, ekosistemnya sudah terbangun, mau cari restoran gampang, hotelnya banyak, transport nyaman. SDM bisa serving dengan baik,\" tutup Pauline.</item>
+        <item>Berlibur itu mengasikkan, menginspirasi, dan menyenangkan. Kita beruntung hidup di dunia di mana berlibur lebih mudah dan murah dibandingkan sebelumnya, dan lebih banyak lagi orang melakukannya – diperkirakan 1,18 miliar orang menghabiskan waktu di luar negeri setiap tahunnya. \n\nSementara liburan santai di pantai mungkin adalah yang dokter sarankan, studi menunjukkan bahwa liburan yang tepat – mendalam, sedikit menantang dan memiliki jangka waktu yang lebih lama – dapat menyegarkan otak Anda dan mengubah cara Anda melihat dunia. Dan hal ini dapat menjadikan Anda pribadi yang lebih baik.\nInilah alasannya.\n\n\nMeningkatkan empati\n\nManusia dilahirkan untuk memiliki empati – kemampuan untuk merasakan rasa sakit yang orang lain rasakan tertanam dalam otak kita dan berfungsi sebagai dasar semua hubungan yang sehat. Namun seperti hal-hal lainnya dalam hidup, Anda perlu berlatih terus-menerus.\n\nKarena liburan memaksa kita untuk \"kabur dari isolasi zona nyaman kita\" sebagaimana dikatakan oleh Nicholas Kristof dari New York Times, dan untuk bertemu orang-orang dan situasi baru di dunia nyata, yang akan memperkuat kemampuan kita untuk berempati dengan lebih banyak orang.\n\nEmpati berhubungan dengan liburan dan penemuan dengan cara yang lain: belajar bahasa baru dan menjadi bilingual – terutama di awal kehidupan – telah terbukti meningkatkan kemampuan kita untuk berempati dengan membuat otak kita berpikir merupakan hal yang normal untuk beralih antar bahasa dan juga perspektif.\n\n\nMemperdalam pemahaman Anda\nBerlibur membantu membuat hal yang tidak familiar menjadi familiar dan menghapus asumsi dan stereotip yang terkadang mewarnai pandangan kita terhadap dunia.\n\nPengalaman pribadi saya sendiri selama tinggal di Tanzania dan bekerja dengan anak-anak jalanan membantu saya memahami budaya kerja Tanzania (mengapa konsensus sangatlah penting untuk semua pengambilan keputusan, misalnya), dan juga ketahanan anak-anak ini dalam menghadapi penolakan dan kekerasan setiap harinya.\n\nPengalaman ini memperdalam pemahaman saya mengenai budaya dan kenyataan yang hanya pernah saya temui sepintas dari kejauhan; dalam sebuah berita yang saya baca dalam perjalanan ke kantor, atau kisah safari yang saya dengar dari seorang teman. Ini membuat budaya Tanzania dan Afrika menjadi lebih dekat dengan saya.\n\n\nMenjadikan Anda lebih kreatif\n\nDi era otomatisasi dan dunia kerja yang akan mengalami begitu banyak perubahan di beberapa dekade mendatang, kreativitas akan menjadi fitur yang menentukan bagi mereka yang memilih untuk terus berkembang. Kreativitas juga akan menjadi hal yang penting untuk menyelesaikan masalah global yang kompleks, dan untuk kelangsungan inovasi dalam bisnis dan sains.\n\nStudi yang dilakukan oleh Adam Galinsky, seorang profesor di Universitas Kolumbia menunjukkan bahwa para eksekutif yang pernah tinggal di beberapa negara – dan karenanya mendapat banyak paparan budaya dan bahasa lain – lebih kreatif dan berani dalam pendekatan terhadap pekerjaan mereka.</item>
+        <item>Setiap orang punya cara masing-masing untuk mencari inspirasi guna mengembangkan diri sesuai dengan bidangnya. Cara yang biasa saya lakukan adalah traveling ke alam. Selain untuk mencari inspirasi, traveling ke alam bisa menghilangkan kejenuhan atau rasa bosan atau lelah karena beban pekerjaan.  Traveling ke alam membangun edukasi humanis.\n\nJakarta dengan segala modernisasi pembangunan dan gaya hidup warganya masih mempunyai tempat wisata alam yang sangat indah. Saya yakin di setiap kota di Indonesia punya tempat wisata alam yang sangat menarik, indah dan memesona. Sungguh Bangga Berwisata di Indonesia.\n\nSaya sering pergi ke lokasi wisata ini dengan bersepeda. Sambil mengayuh saya merasakan keindahan alam yang membangkitkan imajinasi kemahabesaran Allah melalui ciptaanNya. Ketika keponakan saya datanga dari Lampung, saya mengajak wisata alam ini. Bukan hanya ini saja, sebagai seorang pendidik saya memperkenalkan model wisata alam sambil membersihkan sampah kepada para siswa saya. Sebuah Gerakan peduli dan kecintaaan pada lingkungan bersih dan indah.</item>
+
+    </string-array>
+
+    <integer-array name="data_photo">
+        <item>@drawable/blog_image_1</item>
+        <item>@drawable/blog_image_2</item>
+        <item>@drawable/blog_image_3</item>
+        <item>@drawable/blog_image_4</item>
+        <item>@drawable/blog_image_5</item>
+
+    </integer-array>
 </resources>

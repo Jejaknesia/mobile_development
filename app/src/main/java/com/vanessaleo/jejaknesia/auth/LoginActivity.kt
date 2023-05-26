@@ -111,12 +111,12 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-//    override fun onStart() {
-//        super.onStart()
-//
-//        val currentUser = firebaseAuth.currentUser
-//        updateUI(currentUser)
-//    }
+    override fun onStart() {
+        super.onStart()
+
+        val currentUser = firebaseAuth.currentUser
+        updateUI(currentUser)
+    }
 
     companion object {
         private const val TAG = "LoginActivity"

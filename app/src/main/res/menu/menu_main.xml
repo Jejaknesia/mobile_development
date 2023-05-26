@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/option_blog"
+        android:title="@string/blog"
+        android:icon="@drawable/ic_baseline_article_24"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/option_bookmark"
+        android:title="@string/bookmark"
+        android:icon="@drawable/ic_baseline_bookmark_24"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/option_logout"
+        android:title="@string/logout"
+        app:showAsAction="never" />
+</menu>
