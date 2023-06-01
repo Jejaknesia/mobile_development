@@ -35,8 +35,8 @@ class RegisterActivity : AppCompatActivity() {
                 if(password == retypePassword) {
                     firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { result ->
                         if(result.isSuccessful) {
-                            Toast.makeText(this@RegisterActivity, "Pendaftaran berhasil", Toast.LENGTH_SHORT).show()
-                            val intent = Intent(this@RegisterActivity,LoginActivity::class.java)
+                            Toast.makeText(this@RegisterActivity, "Pendaftaran akun berhasil", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
                             startActivity(intent)
                         } else {
                             Toast.makeText(this@RegisterActivity, "Periksa kembali field yang sudah diisi", Toast.LENGTH_SHORT).show()
@@ -48,7 +48,21 @@ class RegisterActivity : AppCompatActivity() {
 
                 }
             } else {
-                Toast.makeText(this@RegisterActivity, "Pastikan semua field terisi terlebih dahulu", Toast.LENGTH_SHORT).show()
+                if(email.isEmpty()) {
+                    binding.editTextEmail.error = FIELD_REQUIRED
+                }
+
+                if(!isValidEmail(email)) {
+                    binding.editTextEmail.error = FIELD_IS_NOT_VALID
+                }
+
+                if(password.isEmpty()) {
+                    binding.editTextPassword.error = FIELD_REQUIRED
+                }
+
+                if(retypePassword.isEmpty()){
+                    binding.editTextRetypePassword.error = FIELD_REQUIRED
+                }
 
             }
         }
@@ -56,6 +70,16 @@ class RegisterActivity : AppCompatActivity() {
         binding.tvLoginHere.setOnClickListener {
             startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
         }
+    }
+
+    private fun isValidEmail(email: CharSequence): Boolean {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
+
+    companion object {
+        private const val FIELD_REQUIRED = "Field tidak boleh kosong"
+        private const val FIELD_IS_NOT_VALID = "Email tidak valid"
+
     }
 
 

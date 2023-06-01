@@ -21,8 +21,11 @@ class PreferenceActivity : AppCompatActivity() {
         supportActionBar?.title = getString(R.string.preference)
 
         binding.apply {
+
             btnChosenCategory.setOnClickListener {
-               Toast.makeText(applicationContext, "Pilihan kamu telah diterima", Toast.LENGTH_SHORT).show()
+                val atmosphere = atmosphere.checkedRadioButtonId == R.id.rb_popular
+                val typical = typical.checkedRadioButtonId == R.id.typical
+
 
             }
         }

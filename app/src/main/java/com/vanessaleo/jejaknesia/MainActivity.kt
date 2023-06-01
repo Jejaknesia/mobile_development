@@ -50,9 +50,10 @@ class MainActivity : AppCompatActivity() {
             welcomeName.text = getString(R.string.welcome_name, firebaseUser.email)
 
             choosePref.setOnClickListener {
-                val destination = editTextDestination.text.toString()
-                val departureDate = editTextDepartureDate.text.toString()
-                val arrivalDate = editTextArrivalDate.text.toString()
+                val destination = editTextDestination.text.toString().trim()
+                val departureDate = editTextDepartureDate.text.toString().trim()
+                val arrivalDate = editTextArrivalDate.text.toString().trim()
+
 
                 if(destination.isNotEmpty() && departureDate.isNotEmpty() && arrivalDate.isNotEmpty()) {
 
@@ -60,7 +61,18 @@ class MainActivity : AppCompatActivity() {
                     startActivity(intent)
 
                 } else {
-                    Toast.makeText(this@MainActivity, "Pastikan semua field terisi terlebih dahulu", Toast.LENGTH_SHORT).show()
+                    if(destination.isEmpty()) {
+                        editTextDestination.error = FIELD_REQUIRED
+
+                    }
+
+                    if(departureDate.isEmpty()) {
+                        editTextDepartureDate.error = FIELD_REQUIRED
+                    }
+
+                    if(arrivalDate.isEmpty()) {
+                        editTextArrivalDate.error = FIELD_REQUIRED
+                    }
 
                 }
             }
@@ -138,5 +150,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    companion object {
+        private const val FIELD_REQUIRED = "Field tidak boleh kosong"
+
     }
 }

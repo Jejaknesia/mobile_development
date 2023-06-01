@@ -59,7 +59,13 @@ class LoginActivity : AppCompatActivity() {
                     }
                 }
             } else {
-                Toast.makeText(this@LoginActivity, "Pastikan semua field terisi terlebih dahulu", Toast.LENGTH_SHORT).show()
+                if(email.isEmpty()) {
+                    binding.editTextEmail.error = FIELD_REQUIRED
+                }
+
+                if(password.isEmpty()) {
+                    binding.editTextPassword.error = FIELD_REQUIRED
+                }
 
             }
         }
@@ -120,6 +126,7 @@ class LoginActivity : AppCompatActivity() {
 
     companion object {
         private const val TAG = "LoginActivity"
+        private const val FIELD_REQUIRED = "Field tidak boleh kosong"
     }
 }
 

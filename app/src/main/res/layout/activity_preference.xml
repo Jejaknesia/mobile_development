@@ -28,6 +28,7 @@
             android:id="@+id/rb_popular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:text="@string/popular" />
 
         <RadioButton
@@ -40,8 +41,7 @@
             android:id="@+id/rb_hidden_gems"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/hidden_gems"
-            tools:checked="true" />
+            android:text="@string/hidden_gems" />
 
     </RadioGroup>
 
@@ -67,6 +67,7 @@
             android:id="@+id/rb_medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:text="@string/medium" />
 
         <RadioButton
@@ -94,7 +95,8 @@
         android:id="@+id/art_culture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/art_culture" />
+        android:text="@string/art_culture"
+        android:checked="true" />
 
     <CheckBox
         android:id="@+id/outdoor"
@@ -127,8 +129,7 @@
             android:id="@+id/beach"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/beach"
-            tools:checked="true" />
+            android:text="@string/beach" />
 
         <CheckBox
             android:id="@+id/lake"
@@ -156,7 +157,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/historical"
-            tools:checked="true"/>
+            android:checked="true" />
 
         <CheckBox
             android:id="@+id/shopping"
@@ -215,7 +216,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/spiritual"
-            tools:checked="true"/>
+            android:checked="true"/>
 
     </LinearLayout>
 
