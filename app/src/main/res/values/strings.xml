@@ -4,7 +4,7 @@
     <string name="bg_text">Travel more,\nworry less</string>
     <string name="get_started">Get Started</string>
     <string name="tv_create_account">Create an account</string>
-    <string name="edit_text_name">Nama Lengkap</string>
+    <string name="edit_text_name">Nama</string>
     <string name="edit_text_email">Email</string>
     <string name="register">Register</string>
     <string name="edit_text_password">Password</string>
@@ -74,6 +74,8 @@
     <string name="logout">Logout</string>
     <string name="publish_date">%1s</string>
     <string name="blog_detail_page">Detail Blog</string>
+    <string name="alert_message">Akun kamu berhasil didaftarkan</string>
+    <string name="confirm_message">OK</string>
 
 
     <string-array name="data_title">

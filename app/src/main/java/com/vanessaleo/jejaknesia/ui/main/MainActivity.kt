@@ -1,22 +1,15 @@
-package com.vanessaleo.jejaknesia
+package com.vanessaleo.jejaknesia.ui.main
 
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.EditText
-import android.widget.Toast
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.google.android.play.integrity.internal.c
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.vanessaleo.jejaknesia.R
 import com.vanessaleo.jejaknesia.auth.LoginActivity
 import com.vanessaleo.jejaknesia.databinding.ActivityMainBinding
 import com.vanessaleo.jejaknesia.ui.BlogActivity
@@ -26,7 +19,7 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var firebaseAuth: FirebaseAuth
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,18 +29,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        firebaseAuth = Firebase.auth
-        val firebaseUser = firebaseAuth.currentUser
-
-        if(firebaseUser == null) {
-            startActivity(Intent(this@MainActivity, LoginActivity::class.java))
-            finish()
-            return
-        }
 
         binding.apply {
 
-            welcomeName.text = getString(R.string.welcome_name, firebaseUser.email)
+            welcomeName.text = getString(R.string.welcome_name)
 
             choosePref.setOnClickListener {
                 val destination = editTextDestination.text.toString().trim()
@@ -142,7 +127,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.option_logout -> {
-                firebaseAuth.signOut()
+//                firebaseAuth.signOut()
 
                 val Intent = Intent(this@MainActivity, LoginActivity::class.java)
                 startActivity(Intent)
