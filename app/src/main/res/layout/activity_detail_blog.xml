@@ -12,6 +12,7 @@
 
     <ImageView
         android:id="@+id/img_detail_photo"
+        android:contentDescription="@string/detail_image"
         android:layout_width="match_parent"
         android:layout_height="280dp"
         android:scaleType="centerCrop"

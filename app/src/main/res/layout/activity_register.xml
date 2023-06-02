@@ -21,16 +21,17 @@
             android:text="@string/register_page"
             android:gravity="center"
             android:textStyle="bold"
+            android:fontFamily="@font/quando"
             android:textSize="24sp" />
     </androidx.appcompat.widget.Toolbar>
 
     <ImageView
         android:id="@+id/iv_jejaknesia"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="100dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/jejaknesia_logo"
+        android:src="@drawable/logo_horizontal"
         android:contentDescription="@string/app_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -43,7 +44,8 @@
         android:layout_height="wrap_content"
         android:textColor="@color/grey"
         android:textSize="24sp"
-        android:layout_marginTop="20dp"
+        android:fontFamily="@font/quando"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_jejaknesia"
@@ -69,9 +71,10 @@
             android:id="@+id/edit_text_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/quando"
             android:hint="@string/edit_text_name"
             android:inputType="textPersonName"
-            android:textColorHint="#000000" />
+            android:textColorHint="#546E7A" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,6 +98,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/edit_text_email"
+            android:fontFamily="@font/quando"
             android:inputType="textEmailAddress"
             android:textColorHint="#000000" />
 
@@ -121,6 +125,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/edit_text_password"
+            android:fontFamily="@font/quando"
             android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -131,10 +136,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:background="@drawable/btn_style"
-        android:backgroundTint="@color/teal_200"
+        android:backgroundTint="@color/orange"
         android:textAllCaps="false"
         android:text="@string/register"
         android:textSize="25sp"
+        android:fontFamily="@font/quando"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password_edit_text_layout" />
 
@@ -153,6 +159,7 @@
             android:layout_height="wrap_content"
             android:text="@string/already_have_account"
             android:textAlignment="center"
+            android:fontFamily="@font/quando"
             android:textSize="15sp" />
 
         <TextView
@@ -162,7 +169,8 @@
             android:layout_marginStart="8dp"
             android:text="@string/login_here"
             android:textSize="15sp"
-            android:textColor="@color/blue" />
+            android:fontFamily="@font/quando"
+            android:textColor="@color/orange" />
 
 
     </LinearLayout>

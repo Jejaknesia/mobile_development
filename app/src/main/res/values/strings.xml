@@ -76,6 +76,8 @@
     <string name="blog_detail_page">Detail Blog</string>
     <string name="alert_message">Akun kamu berhasil didaftarkan</string>
     <string name="confirm_message">OK</string>
+    <string name="caption">Travel more,\n worry less</string>
+    <string name="detail_image">Detail Image</string>
 
 
     <string-array name="data_title">

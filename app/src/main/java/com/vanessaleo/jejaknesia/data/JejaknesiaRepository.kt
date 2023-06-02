@@ -3,7 +3,10 @@ package com.vanessaleo.jejaknesia.data
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.asLiveData
 import com.vanessaleo.jejaknesia.api.ApiService
+import com.vanessaleo.jejaknesia.datastore.UserPreference
+import com.vanessaleo.jejaknesia.model.UserModel
 import com.vanessaleo.jejaknesia.response.LoginResponse
 import com.vanessaleo.jejaknesia.response.RegisterResponse
 import retrofit2.Call
@@ -11,6 +14,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class JejaknesiaRepository private constructor(
+    private val userPref: UserPreference,
     private val apiService: ApiService,
 ) {
     private val _isLoading = MutableLiveData<Boolean>()
@@ -88,16 +92,34 @@ class JejaknesiaRepository private constructor(
         })
     }
 
+
+    fun getUser() : LiveData<UserModel> {
+        return userPref.getUser().asLiveData()
+    }
+
+    suspend fun saveUser(userModel: UserModel) {
+        userPref.saveUser(userModel)
+    }
+
+    suspend fun login() {
+        userPref.login()
+    }
+
+    suspend fun logout() {
+        userPref.logout()
+    }
+
     companion object {
         private const val TAG = "JejaknesiaRepository"
 
         @Volatile
         private var instance: JejaknesiaRepository? = null
         fun getInstance(
+            userPref: UserPreference,
             apiService: ApiService,
         ) : JejaknesiaRepository =
             instance ?: synchronized(this) {
-                instance ?: JejaknesiaRepository(apiService)
+                instance ?: JejaknesiaRepository(userPref, apiService)
             }.also { instance = it }
     }
 }

@@ -7,12 +7,17 @@ import com.vanessaleo.jejaknesia.auth.LoginViewModel
 import com.vanessaleo.jejaknesia.auth.RegisterViewModel
 import com.vanessaleo.jejaknesia.data.JejaknesiaRepository
 import com.vanessaleo.jejaknesia.di.Injection
+import com.vanessaleo.jejaknesia.ui.main.MainViewModel
 
 class ViewModelFactory(private val jejaknesiaRepo: JejaknesiaRepository) : ViewModelProvider.NewInstanceFactory() {
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
+            modelClass.isAssignableFrom(MainViewModel::class.java) -> {
+                MainViewModel(jejaknesiaRepo) as T
+            }
+
             modelClass.isAssignableFrom(RegisterViewModel::class.java) -> {
                 RegisterViewModel(jejaknesiaRepo) as T
             }
