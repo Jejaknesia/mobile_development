@@ -7,6 +7,9 @@
     <string name="edit_text_name">Nama</string>
     <string name="edit_text_email">Email</string>
     <string name="register">Register</string>
+    <string name="input_name">Please, enter your name</string>
+    <string name="input_email">Please, enter your email</string>
+    <string name="input_password">Please, enter your password</string>
     <string name="edit_text_password">Password</string>
     <string name="already_have_account">Already have account?</string>
     <string name="login_here">Login here</string>

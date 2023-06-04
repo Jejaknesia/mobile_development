@@ -5,11 +5,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 import com.vanessaleo.jejaknesia.R
+import com.vanessaleo.jejaknesia.ViewModelFactory
 import com.vanessaleo.jejaknesia.auth.LoginActivity
 import com.vanessaleo.jejaknesia.databinding.ActivityMainBinding
 import com.vanessaleo.jejaknesia.ui.BlogActivity
@@ -19,6 +19,8 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var viewModelFactory: ViewModelFactory
+    private val mainViewModel: MainViewModel by viewModels { viewModelFactory }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,10 +31,47 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+//        setupAdapter()
+        setupViewModel()
+        setupAction()
 
+
+
+    }
+
+//    private fun setupAdapter() {
+//
+//    }
+
+    private fun setupViewModel() {
+        viewModelFactory = ViewModelFactory.getInstance(this)
+
+        showLoading()
+
+        mainViewModel.getUser().observe(this@MainActivity) { user ->
+            if(user.isLogin) {
+                binding.welcomeName.text = getString(R.string.welcome_name, user.name )
+            } else {
+                startActivity(Intent(this@MainActivity, LoginActivity::class.java))
+                finish()
+            }
+        }
+    }
+
+    private fun showLoading() {
+        mainViewModel.isLoading.observe(this) { isLoading ->
+            if (isLoading) {
+                binding.progressBar.visibility = View.VISIBLE
+            } else {
+                binding.progressBar.visibility = View.GONE
+            }
+        }
+    }
+
+    private fun setupAction() {
         binding.apply {
 
-            welcomeName.text = getString(R.string.welcome_name)
+
 
             choosePref.setOnClickListener {
                 val destination = editTextDestination.text.toString().trim()
@@ -107,7 +146,6 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -127,10 +165,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.option_logout -> {
-//                firebaseAuth.signOut()
-
-                val Intent = Intent(this@MainActivity, LoginActivity::class.java)
-                startActivity(Intent)
+                mainViewModel.logout()
             }
         }
 

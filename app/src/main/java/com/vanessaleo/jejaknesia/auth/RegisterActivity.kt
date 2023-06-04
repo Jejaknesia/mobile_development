@@ -1,18 +1,11 @@
 package com.vanessaleo.jejaknesia.auth
 
 import android.content.Intent
-import android.graphics.drawable.ColorDrawable
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.annotation.RequiresApi
-import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AlertDialog
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.ktx.Firebase
 import com.vanessaleo.jejaknesia.R
 import com.vanessaleo.jejaknesia.ViewModelFactory
 import com.vanessaleo.jejaknesia.databinding.ActivityRegisterBinding
@@ -45,11 +38,11 @@ class RegisterActivity : AppCompatActivity() {
 
            when {
                name.isEmpty() -> {
-                   binding.nameEditTextLayout.error = FIELD_REQUIRED
+                   binding.nameEditTextLayout.error = resources.getString(R.string.input_name)
                }
 
                email.isEmpty() -> {
-                   binding.emailEditTextLayout.error = FIELD_REQUIRED
+                   binding.emailEditTextLayout.error = resources.getString(R.string.input_email)
                }
 
                !isValidEmail(email) -> {
@@ -57,7 +50,7 @@ class RegisterActivity : AppCompatActivity() {
                }
 
                password.isEmpty() -> {
-                   binding.passwordEditTextLayout.error = FIELD_REQUIRED
+                   binding.passwordEditTextLayout.error =  resources.getString(R.string.input_password)
                }
 
                else -> {
@@ -119,7 +112,6 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     companion object {
-        private const val FIELD_REQUIRED = "Field ini tidak boleh kosong"
         private const val FIELD_IS_NOT_VALID = "Email tidak valid"
 
     }

@@ -9,6 +9,7 @@ import com.vanessaleo.jejaknesia.datastore.UserPreference
 import com.vanessaleo.jejaknesia.model.UserModel
 import com.vanessaleo.jejaknesia.response.LoginResponse
 import com.vanessaleo.jejaknesia.response.RegisterResponse
+
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -76,11 +77,11 @@ class JejaknesiaRepository private constructor(
                     val responseBody = response.body()
                     if(responseBody != null) {
                         _loginResponse.value = response.body()
-                        _toastMessage.value = Event(response.body()?.status.toString())
+                        _toastMessage.value = Event(response.body()?.message.toString())
                     }
                 } else {
-                    _toastMessage.value = Event(response.message().toString())
-                    Log.d(TAG, "onFailure: ${response.message()}")
+                    _toastMessage.value = Event("Invalid email or password")
+                    Log.d(TAG, "onFailure: Invalid email or password}")
                 }
             }
 

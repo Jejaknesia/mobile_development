@@ -8,7 +8,7 @@ import com.vanessaleo.jejaknesia.api.ApiConfig
 import com.vanessaleo.jejaknesia.data.JejaknesiaRepository
 import com.vanessaleo.jejaknesia.datastore.UserPreference
 
-private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "datastore")
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "token")
 
 object Injection {
     fun provideRepository(context: Context) : JejaknesiaRepository {

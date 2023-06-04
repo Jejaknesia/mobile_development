@@ -11,6 +11,7 @@ import com.vanessaleo.jejaknesia.R
 import com.vanessaleo.jejaknesia.ViewModelFactory
 import com.vanessaleo.jejaknesia.ui.main.MainActivity
 import com.vanessaleo.jejaknesia.databinding.ActivityLoginBinding
+import com.vanessaleo.jejaknesia.model.UserModel
 
 
 class LoginActivity : AppCompatActivity() {
@@ -38,11 +39,11 @@ class LoginActivity : AppCompatActivity() {
 
             when {
                 email.isEmpty() -> {
-                    binding.emailEditTextLayout.error = FIELD_REQUIRED
+                    binding.emailEditTextLayout.error = resources.getString(R.string.input_email)
                 }
 
                 password.isEmpty() -> {
-                    binding.passwordEditTextLayout.error = FIELD_REQUIRED
+                    binding.passwordEditTextLayout.error = resources.getString(R.string.input_password)
                 }
 
                 else -> {
@@ -57,15 +58,15 @@ class LoginActivity : AppCompatActivity() {
                         }
                     }
 
-
                     loginViewModel.apply {
                         loginResponse.observe(this@LoginActivity) { loginResponse ->
-                            if(loginResponse.status == "login success") {
+                            if(!loginResponse.error) {
                                 AlertDialog.Builder(this@LoginActivity).apply {
                                     setTitle("Yeah")
                                     setMessage("Kamu berhasil masuk.")
                                     setPositiveButton(getString(R.string.confirm_message)) { _, _ ->
-                                        startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                                        startActivity(intent)
                                         finish()
                                     }
 
@@ -75,6 +76,8 @@ class LoginActivity : AppCompatActivity() {
                             }
                         }
                     }
+
+
                 }
             }
 
@@ -91,6 +94,17 @@ class LoginActivity : AppCompatActivity() {
 
         loginViewModel.postLogin(email, password)
 
+        loginViewModel.apply {
+            loginResponse.observe(this@LoginActivity) { loginResp ->
+                saveUser(
+                    UserModel(
+                        loginResp.loginResult.name,
+                        loginResp.loginResult.token,
+                        true
+                    )
+                )
+            }
+        }
 
 
 
@@ -109,27 +123,6 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setupViewModel() {
         viewModelFactory = ViewModelFactory.getInstance(this)
-    }
-
-
-
-//    private fun updateUI(currentUser: FirebaseUser?) {
-//        if (currentUser != null){
-//            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-//            finish()
-//        }
-//    }
-//
-//    override fun onStart() {
-//        super.onStart()
-//
-//        val currentUser = firebaseAuth.currentUser
-//        updateUI(currentUser)
-//    }
-
-    companion object {
-        private const val TAG = "LoginActivity"
-        private const val FIELD_REQUIRED = "Field tidak boleh kosong"
     }
 }
 
