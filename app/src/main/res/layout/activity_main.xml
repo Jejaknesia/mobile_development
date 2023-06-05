@@ -12,11 +12,10 @@
     
     <ImageView
         android:id="@+id/iv_logo_without_name"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/border_image"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/new_logo_vertical"
+        android:src="@drawable/jejaknesia_logo__new_vertic"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,6 +27,8 @@
             android:layout_height="wrap_content"
             android:text="@string/welcome_name"
             android:textSize="16sp"
+            android:fontFamily="@font/quando"
+            android:textStyle="bold"
             android:layout_marginStart="8dp"
             app:layout_constraintStart_toEndOf="@id/iv_logo_without_name"
             app:layout_constraintTop_toTopOf="@id/iv_logo_without_name" />
@@ -37,7 +38,6 @@
         android:layout_height="wrap_content"
         android:text="@string/explore_beautiful_world"
         android:textSize="18sp"
-        android:textStyle="bold"
         android:fontFamily="@font/quando"
         android:layout_marginStart="8dp"
         app:layout_constraintStart_toEndOf="@id/iv_logo_without_name"
@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/text_only"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:fontFamily="@font/quando"
         android:layout_marginTop="32dp"
@@ -70,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/itinerary_planner"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:fontFamily="@font/quando"
             android:layout_marginTop="24dp" />
@@ -94,6 +94,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/enter_destination"
                 android:fontFamily="@font/quando"
+                android:textSize="14sp"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -118,6 +119,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/departure_date"
                 android:fontFamily="@font/quando"
+                android:textSize="14sp"
                 android:inputType="date" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -142,6 +144,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/arrival_date"
                 android:fontFamily="@font/quando"
+                android:textSize="14sp"
                 android:inputType="date" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -152,7 +155,7 @@
             android:layout_height="wrap_content"
             android:text="@string/choose_your_preferences"
             android:textAllCaps="false"
-            android:textSize="16sp"
+            android:textSize="15sp"
             android:fontFamily="@font/quando"
             android:layout_marginTop="16dp" />
 
