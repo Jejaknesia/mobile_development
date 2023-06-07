@@ -4,12 +4,10 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asLiveData
-import com.vanessaleo.jejaknesia.api.ApiConfig
 import com.vanessaleo.jejaknesia.api.ApiService
 import com.vanessaleo.jejaknesia.datastore.UserPreference
 import com.vanessaleo.jejaknesia.model.UserModel
 import com.vanessaleo.jejaknesia.response.*
-
 
 
 import retrofit2.Call
@@ -36,7 +34,8 @@ class JejaknesiaRepository private constructor(
 //    val blogResponse: LiveData<BlogResponse> = _blogResponse
 
     private val _dataItem = MutableLiveData<ArrayList<DataItem>>()
-//    val dataItem: LiveData<ArrayList<DataItem>> = _dataItem
+
+    //    val dataItem: LiveData<ArrayList<DataItem>> = _dataItem
     val dataItem: LiveData<ArrayList<DataItem>> get() = _dataItem
 
     private val _snackbarText = MutableLiveData<Event<String>>()
@@ -47,17 +46,17 @@ class JejaknesiaRepository private constructor(
         _isLoading.value = true
 
         val client = apiService.postRegister(name, email, password)
-        client.enqueue(object: Callback<RegisterResponse> {
+        client.enqueue(object : Callback<RegisterResponse> {
             override fun onResponse(
                 call: Call<RegisterResponse>,
                 response: Response<RegisterResponse>,
             ) {
                 _isLoading.value = false
 
-                if(response.isSuccessful) {
+                if (response.isSuccessful) {
                     val responseBody = response.body()
 
-                    if(responseBody != null) {
+                    if (responseBody != null) {
                         _registerResponse.value = response.body()
                         _toastMessage.value = Event(response.body()?.status.toString())
                     }
@@ -81,13 +80,13 @@ class JejaknesiaRepository private constructor(
         _isLoading.value = true
 
         val client = apiService.postLogin(email, password)
-        client.enqueue(object: Callback<LoginResponse> {
+        client.enqueue(object : Callback<LoginResponse> {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 _isLoading.value = false
 
-                if(response.isSuccessful) {
+                if (response.isSuccessful) {
                     val responseBody = response.body()
-                    if(responseBody != null) {
+                    if (responseBody != null) {
                         _loginResponse.value = response.body()
                         _toastMessage.value = Event(response.body()?.message.toString())
                     }
@@ -107,11 +106,11 @@ class JejaknesiaRepository private constructor(
     }
 
 
-    fun getBlogs() : LiveData<ArrayList<DataItem>> {
+    fun getBlogs(): LiveData<ArrayList<DataItem>> {
         _isLoading.value = true
 
         val client = apiService.getBlogs()
-        client.enqueue(object: Callback<BlogResponse>{
+        client.enqueue(object : Callback<BlogResponse> {
             override fun onResponse(
                 call: Call<BlogResponse>,
                 response: Response<BlogResponse>,
@@ -139,12 +138,8 @@ class JejaknesiaRepository private constructor(
         return dataItem
     }
 
-    fun getDataBlog() : LiveData<ArrayList<DataItem>> {
-        return dataItem
-    }
 
-
-    fun getUser() : LiveData<UserModel> {
+    fun getUser(): LiveData<UserModel> {
         return userPref.getUser().asLiveData()
     }
 
@@ -161,7 +156,6 @@ class JejaknesiaRepository private constructor(
     }
 
 
-
     companion object {
         private const val TAG = "JejaknesiaRepository"
 
@@ -170,7 +164,7 @@ class JejaknesiaRepository private constructor(
         fun getInstance(
             userPref: UserPreference,
             apiService: ApiService,
-        ) : JejaknesiaRepository =
+        ): JejaknesiaRepository =
             instance ?: synchronized(this) {
                 instance ?: JejaknesiaRepository(userPref, apiService)
             }.also { instance = it }

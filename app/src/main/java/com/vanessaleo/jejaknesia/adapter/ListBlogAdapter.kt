@@ -8,10 +8,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.vanessaleo.jejaknesia.R
 import com.vanessaleo.jejaknesia.databinding.ItemBlogBinding
-import com.vanessaleo.jejaknesia.model.BlogModel
-import com.vanessaleo.jejaknesia.response.BlogResponse
 import com.vanessaleo.jejaknesia.response.DataItem
-import com.vanessaleo.jejaknesia.ui.blog.BlogViewModel
 
 
 class ListBlogAdapter : RecyclerView.Adapter<ListBlogAdapter.ListViewHolder>() {
@@ -30,7 +27,8 @@ class ListBlogAdapter : RecyclerView.Adapter<ListBlogAdapter.ListViewHolder>() {
         notifyDataSetChanged()
     }
 
-    inner class ListViewHolder(private var binding: ItemBlogBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ListViewHolder(private var binding: ItemBlogBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(blog: DataItem) {
             binding.root.setOnClickListener {
                 onItemClickCallback.onItemClicked(blog)

@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewModelFactory: ViewModelFactory
     private val mainViewModel: MainViewModel by viewModels { viewModelFactory }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -34,8 +33,6 @@ class MainActivity : AppCompatActivity() {
 //        setupAdapter()
         setupViewModel()
         setupAction()
-
-
 
     }
 
@@ -49,8 +46,8 @@ class MainActivity : AppCompatActivity() {
         showLoading()
 
         mainViewModel.getUser().observe(this@MainActivity) { user ->
-            if(user.isLogin) {
-                binding.welcomeName.text = getString(R.string.welcome_name, user.name )
+            if (user.isLogin) {
+                binding.welcomeName.text = getString(R.string.welcome_name, user.name)
             } else {
                 startActivity(Intent(this@MainActivity, LoginActivity::class.java))
                 finish()
@@ -72,29 +69,28 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
 
 
-
             choosePref.setOnClickListener {
                 val destination = editTextDestination.text.toString().trim()
                 val departureDate = editTextDepartureDate.text.toString().trim()
                 val arrivalDate = editTextArrivalDate.text.toString().trim()
 
 
-                if(destination.isNotEmpty() && departureDate.isNotEmpty() && arrivalDate.isNotEmpty()) {
+                if (destination.isNotEmpty() && departureDate.isNotEmpty() && arrivalDate.isNotEmpty()) {
 
                     val intent = Intent(this@MainActivity, PreferenceActivity::class.java)
                     startActivity(intent)
 
                 } else {
-                    if(destination.isEmpty()) {
+                    if (destination.isEmpty()) {
                         editTextDestination.error = FIELD_REQUIRED
 
                     }
 
-                    if(departureDate.isEmpty()) {
+                    if (departureDate.isEmpty()) {
                         editTextDepartureDate.error = FIELD_REQUIRED
                     }
 
-                    if(arrivalDate.isEmpty()) {
+                    if (arrivalDate.isEmpty()) {
                         editTextArrivalDate.error = FIELD_REQUIRED
                     }
 
@@ -108,7 +104,7 @@ class MainActivity : AppCompatActivity() {
                 val month = calendar.get(Calendar.MONTH)
                 val day = calendar.get(Calendar.DAY_OF_MONTH)
 
-                val datePickerDialog = DatePickerDialog(
+                @Suppress("NAME_SHADOWING") val datePickerDialog = DatePickerDialog(
                     this@MainActivity, { _, year, month, day ->
                         val date = (day.toString() + "-" + (month + 1) + "-" + year)
                         editTextDepartureDate.setText(date)
@@ -131,7 +127,7 @@ class MainActivity : AppCompatActivity() {
                 val month = calendar.get(Calendar.MONTH)
                 val day = calendar.get(Calendar.DAY_OF_MONTH)
 
-                val datePickerDialog = DatePickerDialog(
+                @Suppress("NAME_SHADOWING") val datePickerDialog = DatePickerDialog(
                     this@MainActivity, { _, year, month, day ->
                         val date = (day.toString() + "-" + (month + 1) + "-" + year)
                         editTextArrivalDate.setText(date)
@@ -154,7 +150,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
+        when (item.itemId) {
             R.id.option_blog -> {
                 val blogPageIntent = Intent(this@MainActivity, BlogActivity::class.java)
                 startActivity(blogPageIntent)

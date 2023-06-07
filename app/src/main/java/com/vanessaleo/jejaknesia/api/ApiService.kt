@@ -1,7 +1,6 @@
 package com.vanessaleo.jejaknesia.api
 
 import com.vanessaleo.jejaknesia.response.BlogResponse
-import com.vanessaleo.jejaknesia.response.DataItem
 import com.vanessaleo.jejaknesia.response.LoginResponse
 import com.vanessaleo.jejaknesia.response.RegisterResponse
 import retrofit2.Call

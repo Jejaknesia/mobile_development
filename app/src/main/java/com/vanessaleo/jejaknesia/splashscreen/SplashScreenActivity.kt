@@ -11,6 +11,7 @@ import com.vanessaleo.jejaknesia.auth.LoginActivity
 import com.vanessaleo.jejaknesia.ui.main.MainActivity
 import com.vanessaleo.jejaknesia.ui.main.MainViewModel
 
+@Suppress("DEPRECATION")
 class SplashScreenActivity : AppCompatActivity() {
     private lateinit var viewModelFactory: ViewModelFactory
     private val mainViewModel: MainViewModel by viewModels { viewModelFactory }
@@ -32,7 +33,7 @@ class SplashScreenActivity : AppCompatActivity() {
         viewModelFactory = ViewModelFactory.getInstance(this)
 
         mainViewModel.getUser().observe(this) { user ->
-            if(user.isLogin) {
+            if (user.isLogin) {
                 startActivity(Intent(this@SplashScreenActivity, MainActivity::class.java))
                 finish()
             } else {

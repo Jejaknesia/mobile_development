@@ -43,7 +43,8 @@ class LoginActivity : AppCompatActivity() {
                 }
 
                 password.isEmpty() -> {
-                    binding.passwordEditTextLayout.error = resources.getString(R.string.input_password)
+                    binding.passwordEditTextLayout.error =
+                        resources.getString(R.string.input_password)
                 }
 
                 else -> {
@@ -60,13 +61,15 @@ class LoginActivity : AppCompatActivity() {
 
                     loginViewModel.apply {
                         loginResponse.observe(this@LoginActivity) { loginResponse ->
-                            if(!loginResponse.error) {
+                            if (!loginResponse.error) {
                                 AlertDialog.Builder(this@LoginActivity).apply {
                                     setTitle("Yeah")
                                     setMessage("Kamu berhasil masuk.")
                                     setPositiveButton(getString(R.string.confirm_message)) { _, _ ->
-                                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                                        val intent =
+                                            Intent(this@LoginActivity, MainActivity::class.java)
+                                        intent.flags =
+                                            Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                                         startActivity(intent)
                                         finish()
                                     }
@@ -106,7 +109,6 @@ class LoginActivity : AppCompatActivity() {
                 )
             }
         }
-
 
 
     }

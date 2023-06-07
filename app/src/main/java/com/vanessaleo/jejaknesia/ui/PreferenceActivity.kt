@@ -1,11 +1,7 @@
 package com.vanessaleo.jejaknesia.ui
 
-import android.app.Dialog
-import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import com.vanessaleo.jejaknesia.R
 import com.vanessaleo.jejaknesia.databinding.ActivityPreferenceBinding
 

@@ -6,14 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
-import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vanessaleo.jejaknesia.R
 import com.vanessaleo.jejaknesia.ViewModelFactory
 import com.vanessaleo.jejaknesia.adapter.ListBlogAdapter
-import com.vanessaleo.jejaknesia.auth.LoginViewModel
 import com.vanessaleo.jejaknesia.databinding.ActivityBlogBinding
-import com.vanessaleo.jejaknesia.model.BlogModel
 import com.vanessaleo.jejaknesia.response.DataItem
 
 class BlogActivity : AppCompatActivity() {
@@ -41,7 +38,7 @@ class BlogActivity : AppCompatActivity() {
         blogAdapter = ListBlogAdapter()
         blogAdapter.notifyDataSetChanged()
 
-        blogAdapter.setOnItemClickCallback(object: ListBlogAdapter.OnItemClickCallback {
+        blogAdapter.setOnItemClickCallback(object : ListBlogAdapter.OnItemClickCallback {
             override fun onItemClicked(data: DataItem) {
                 val intentToDetail = Intent(this@BlogActivity, DetailBlogActivity::class.java)
                 intentToDetail.putExtra(DetailBlogActivity.EXTRA_TITLE, data.title)
@@ -55,8 +52,6 @@ class BlogActivity : AppCompatActivity() {
             }
 
         })
-
-
 
 
     }
@@ -74,7 +69,7 @@ class BlogActivity : AppCompatActivity() {
 
 
         blogViewModel.getBlogs().observe(this) { blogs ->
-            if(blogs != null) {
+            if (blogs != null) {
                 showLoading()
                 blogAdapter.setListBlog(blogs)
 
@@ -106,7 +101,7 @@ class BlogActivity : AppCompatActivity() {
 
     private fun showLoading() {
         blogViewModel.isLoading.observe(this) { isLoading ->
-            if(isLoading) {
+            if (isLoading) {
                 binding.progressBar.visibility = View.VISIBLE
             } else {
                 binding.progressBar.visibility = View.GONE
@@ -114,6 +109,7 @@ class BlogActivity : AppCompatActivity() {
         }
     }
 
+    @Suppress("DEPRECATION")
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true

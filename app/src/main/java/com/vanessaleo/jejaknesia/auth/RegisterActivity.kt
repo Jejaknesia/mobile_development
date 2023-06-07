@@ -36,46 +36,48 @@ class RegisterActivity : AppCompatActivity() {
             val email = binding.editTextEmail.text.toString()
             val password = binding.editTextPassword.text.toString()
 
-           when {
-               name.isEmpty() -> {
-                   binding.nameEditTextLayout.error = resources.getString(R.string.input_name)
-               }
+            when {
+                name.isEmpty() -> {
+                    binding.nameEditTextLayout.error = resources.getString(R.string.input_name)
+                }
 
-               email.isEmpty() -> {
-                   binding.emailEditTextLayout.error = resources.getString(R.string.input_email)
-               }
+                email.isEmpty() -> {
+                    binding.emailEditTextLayout.error = resources.getString(R.string.input_email)
+                }
 
-               !isValidEmail(email) -> {
-                   binding.emailEditTextLayout.error = FIELD_IS_NOT_VALID
-               }
+                !isValidEmail(email) -> {
+                    binding.emailEditTextLayout.error = FIELD_IS_NOT_VALID
+                }
 
-               password.isEmpty() -> {
-                   binding.passwordEditTextLayout.error =  resources.getString(R.string.input_password)
-               }
+                password.isEmpty() -> {
+                    binding.passwordEditTextLayout.error =
+                        resources.getString(R.string.input_password)
+                }
 
-               else -> {
-                   showLoading()
-                   setupRegisterAuth()
+                else -> {
+                    showLoading()
+                    setupRegisterAuth()
 
-                   registerViewModel.toastMessage.observe(this@RegisterActivity) {
-                       it.getContentIfNotHandled().let {
-                           AlertDialog.Builder(this@RegisterActivity).apply {
-                               setTitle("Yeah!")
-                               setMessage(getString(R.string.alert_message))
-                               setPositiveButton(getString(R.string.confirm_message)) { _, _ ->
-                                   startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
-                                   finish()
-                               }
+                    registerViewModel.toastMessage.observe(this@RegisterActivity) {
+                        it.getContentIfNotHandled().let {
+                            AlertDialog.Builder(this@RegisterActivity).apply {
+                                setTitle("Yeah!")
+                                setMessage(getString(R.string.alert_message))
+                                setPositiveButton(getString(R.string.confirm_message)) { _, _ ->
+                                    startActivity(Intent(this@RegisterActivity,
+                                        LoginActivity::class.java))
+                                    finish()
+                                }
 
-                               create()
-                               show()
-                           }
-                       }
-                   }
+                                create()
+                                show()
+                            }
+                        }
+                    }
 
 
-               }
-           }
+                }
+            }
 
 
         }
@@ -95,7 +97,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun showLoading() {
         registerViewModel.isLoading.observe(this) { isLoading ->
-            if(isLoading) {
+            if (isLoading) {
                 binding.progressBar.visibility = View.VISIBLE
             } else {
                 binding.progressBar.visibility = View.GONE
