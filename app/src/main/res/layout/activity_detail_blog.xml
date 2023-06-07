@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.DetailBlogActivity">
+    tools:context=".ui.blog.DetailBlogActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/img_detail_photo"
+        android:id="@+id/iv_detail_photo"
         android:contentDescription="@string/detail_image"
         android:layout_width="match_parent"
         android:layout_height="280dp"
@@ -30,7 +30,7 @@
         android:fontFamily="@font/quando"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img_detail_photo"
+        app:layout_constraintTop_toBottomOf="@id/iv_detail_photo"
         tools:text="Judul" />
 
     <TextView

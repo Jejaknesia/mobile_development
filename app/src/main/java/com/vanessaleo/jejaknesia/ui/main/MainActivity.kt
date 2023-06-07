@@ -12,7 +12,7 @@ import com.vanessaleo.jejaknesia.R
 import com.vanessaleo.jejaknesia.ViewModelFactory
 import com.vanessaleo.jejaknesia.auth.LoginActivity
 import com.vanessaleo.jejaknesia.databinding.ActivityMainBinding
-import com.vanessaleo.jejaknesia.ui.BlogActivity
+import com.vanessaleo.jejaknesia.ui.blog.BlogActivity
 import com.vanessaleo.jejaknesia.ui.PreferenceActivity
 import java.util.*
 

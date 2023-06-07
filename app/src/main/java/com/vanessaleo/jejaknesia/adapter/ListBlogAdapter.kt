@@ -1,15 +1,54 @@
 package com.vanessaleo.jejaknesia.adapter
 
-import android.content.Intent
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.vanessaleo.jejaknesia.R
 import com.vanessaleo.jejaknesia.databinding.ItemBlogBinding
-import com.vanessaleo.jejaknesia.model.Blog
-import com.vanessaleo.jejaknesia.ui.DetailBlogActivity
+import com.vanessaleo.jejaknesia.model.BlogModel
+import com.vanessaleo.jejaknesia.response.BlogResponse
+import com.vanessaleo.jejaknesia.response.DataItem
+import com.vanessaleo.jejaknesia.ui.blog.BlogViewModel
 
-class ListBlogAdapter(private val listBlog: ArrayList<Blog>) : RecyclerView.Adapter<ListBlogAdapter.ListViewHolder>() {
-    class ListViewHolder(var binding: ItemBlogBinding) : RecyclerView.ViewHolder(binding.root) {
+
+class ListBlogAdapter : RecyclerView.Adapter<ListBlogAdapter.ListViewHolder>() {
+    private val list = ArrayList<DataItem>()
+
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun setListBlog(blogs: ArrayList<DataItem>) {
+        list.clear()
+        list.addAll(blogs)
+        notifyDataSetChanged()
+    }
+
+    inner class ListViewHolder(private var binding: ItemBlogBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(blog: DataItem) {
+            binding.root.setOnClickListener {
+                onItemClickCallback.onItemClicked(blog)
+            }
+
+            binding.apply {
+
+                tvBlogTitle.text = blog.title
+                blogContent.text = blog.content
+                Glide.with(itemView)
+                    .load(blog.photo)
+                    .placeholder(R.color.grey)
+                    .transition(DrawableTransitionOptions.withCrossFade())
+                    .centerCrop()
+                    .into(ivBlog)
+            }
+        }
+
 
     }
 
@@ -19,17 +58,12 @@ class ListBlogAdapter(private val listBlog: ArrayList<Blog>) : RecyclerView.Adap
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (title, author, date, content, photo) = listBlog[position]
-        holder.binding.tvBlogTitle.text = title
-        holder.binding.blogContent.text = content
-        holder.binding.ivBlog.setImageResource(photo)
-
-        holder.itemView.setOnClickListener {
-            val intentToDetail = Intent(holder.itemView.context, DetailBlogActivity::class.java)
-            intentToDetail.putExtra(DetailBlogActivity.KEY_BLOG, listBlog[holder.adapterPosition])
-            holder.itemView.context.startActivity(intentToDetail)
-        }
+        holder.bind(list[position])
     }
 
-    override fun getItemCount(): Int = listBlog.size
+    override fun getItemCount(): Int = list.size
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: DataItem)
+    }
 }

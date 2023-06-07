@@ -1,11 +1,11 @@
 package com.vanessaleo.jejaknesia.api
 
+import com.vanessaleo.jejaknesia.response.BlogResponse
+import com.vanessaleo.jejaknesia.response.DataItem
 import com.vanessaleo.jejaknesia.response.LoginResponse
 import com.vanessaleo.jejaknesia.response.RegisterResponse
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ApiService {
     @FormUrlEncoded
@@ -22,5 +22,14 @@ interface ApiService {
         @Field("email") email: String,
         @Field("password") password: String,
     ) : Call<LoginResponse>
+
+    @GET("api/blogs")
+    fun getBlogs() : Call<BlogResponse>
+
+//    @GET("/api/blogs/{id}")
+//    fun getDetailBlog(
+//        @Path("id") id: String
+//    ): Call<DetailResponse>
+
 
 }
