@@ -69,109 +69,81 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/itinerary_planner"
+            android:text="@string/text_category"
             android:textSize="18sp"
             android:textStyle="bold"
             android:fontFamily="@font/quando"
             android:layout_marginTop="24dp" />
 
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/destination_edit_text_layout"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:boxCornerRadiusBottomStart="10dp"
-            app:boxCornerRadiusTopEnd="10dp"
-            app:boxCornerRadiusTopStart="10dp"
-            app:boxCornerRadiusBottomEnd="10dp"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="24dp"
+            android:text="@string/choose_category" />
 
+        <RadioGroup
+            android:id="@+id/radio_group_options"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_text_destination"
-                android:layout_width="match_parent"
+            <RadioButton
+                android:id="@+id/ruang_terbuka"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/enter_destination"
-                android:fontFamily="@font/quando"
-                android:textSize="14sp"
-                android:inputType="text" />
+                android:text="@string/ruang_terbuka" />
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/departure_date_edit_text_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_marginTop="30dp"
-            app:boxCornerRadiusBottomStart="10dp"
-            app:boxCornerRadiusTopEnd="10dp"
-            app:boxCornerRadiusTopStart="10dp"
-            app:boxCornerRadiusBottomEnd="10dp"
-            app:startIconDrawable="@drawable/ic_baseline_date_range_24"
-            app:endIconMode="custom">
-
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_text_departure_date"
-                android:layout_width="match_parent"
+            <RadioButton
+                android:id="@+id/tempat_bersejarah"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/departure_date"
-                android:fontFamily="@font/quando"
-                android:textSize="14sp"
-                android:inputType="date" />
+                android:text="@string/tempat_bersejarah" />
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/arrival_date_edit_text_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:boxCornerRadiusBottomStart="10dp"
-            app:boxCornerRadiusTopEnd="10dp"
-            app:boxCornerRadiusTopStart="10dp"
-            app:boxCornerRadiusBottomEnd="10dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:startIconDrawable="@drawable/ic_baseline_date_range_24"
-            app:endIconMode="custom"
-            android:layout_marginTop="30dp" >
-
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_text_arrival_date"
-                android:layout_width="match_parent"
+            <RadioButton
+                android:id="@+id/seni_dan_budaya"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/arrival_date"
-                android:fontFamily="@font/quando"
-                android:textSize="14sp"
-                android:inputType="date" />
+                android:text="@string/seni_dan_budaya" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+            <RadioButton
+                android:id="@+id/relaxing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/relaxing" />
+
+            <RadioButton
+                android:id="@+id/aktivitas_air"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/aktivitas_air" />
+
+            <RadioButton
+                android:id="@+id/hutan_flora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hutan_flora" />
+
+            <RadioButton
+                android:id="@+id/berkeliling_kota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/berkeliling_kota" />
+
+        </RadioGroup>
+
+
 
         <Button
-            android:id="@+id/choose_pref"
-            android:layout_width="match_parent"
+            android:id="@+id/btn_chosen_category"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/choose_your_preferences"
-            android:textAllCaps="false"
-            android:textSize="15sp"
-            android:fontFamily="@font/quando"
-            android:layout_marginTop="16dp" />
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="@string/generate_result" />
+
 
     </LinearLayout>
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

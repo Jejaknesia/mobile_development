@@ -67,6 +67,8 @@ class RegisterActivity : AppCompatActivity() {
                                     startActivity(Intent(this@RegisterActivity,
                                         LoginActivity::class.java))
                                     finish()
+
+
                                 }
 
                                 create()

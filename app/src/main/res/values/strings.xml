@@ -34,7 +34,7 @@
     <string name="blog_title">Judul Blog</string>
     <string name="blog_content">Isi konten blog</string>
     <string name="blog">Blog</string>
-    <string name="bookmark">Bookmark</string>
+    <string name="dark_mode">Dark Mode</string>
     <string name="my_profile">My Profile</string>
     <string name="home_page">Home</string>
     <string name="welcome_name">Welcome, %1s</string>
@@ -68,7 +68,7 @@
     <string name="water_activities">Water Act.</string>
     <string name="city">City</string>
     <string name="spiritual">Spiritual</string>
-    <string name="choose_category">Pilih kategori berdasarkan kriteria yang kamu inginkan ya!(Boleh lebih dari 1)</string>
+    <string name="choose_category">Pilih berdasarkan kategori yang kamu inginkan ya!</string>
     <string name="add_result">Add result</string>
     <string name="preference">Preference</string>
     <string name="generate_result">Generate Result</string>
@@ -81,6 +81,13 @@
     <string name="confirm_message">OK</string>
     <string name="caption">Travel more,\n worry less</string>
     <string name="detail_image">Detail Image</string>
+    <string name="text_category">Berdasarkan Preferensi Kamu</string>
+    <string name="ruang_terbuka">Ruang Terbuka</string>
+    <string name="tempat_bersejarah">Tempat Bersejarah</string>
+    <string name="seni_dan_budaya"><![CDATA[Seni & Budaya]]></string>
+    <string name="aktivitas_air">Aktivitas Air</string>
+    <string name="hutan_flora">Hutan / Flora</string>
+    <string name="berkeliling_kota">Berkeliling Kota</string>
 
 
     <string-array name="data_title">

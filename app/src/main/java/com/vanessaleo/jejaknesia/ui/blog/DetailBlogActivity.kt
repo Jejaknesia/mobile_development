@@ -1,19 +1,24 @@
 package com.vanessaleo.jejaknesia.ui.blog
 
 import android.annotation.SuppressLint
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.annotation.RequiresApi
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.vanessaleo.jejaknesia.R
 import com.vanessaleo.jejaknesia.databinding.ActivityDetailBlogBinding
 import org.ocpsoft.prettytime.PrettyTime
 import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class DetailBlogActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBlogBinding
 
+    @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("SimpleDateFormat")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +40,6 @@ class DetailBlogActivity : AppCompatActivity() {
         val prettyTime = PrettyTime(Locale.getDefault())
         val timeAsAgo = prettyTime.format(time?.let { Date(it) })
 
-
         binding.apply {
             tvDetailTitle.text = title
             tvWrittenBy.text = author
@@ -49,6 +53,8 @@ class DetailBlogActivity : AppCompatActivity() {
                 .into(ivDetailPhoto)
         }
     }
+
+
 
     @Suppress("DEPRECATION")
     override fun onSupportNavigateUp(): Boolean {

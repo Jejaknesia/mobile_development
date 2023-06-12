@@ -25,10 +25,5 @@ interface ApiService {
     @GET("api/blogs")
     fun getBlogs() : Call<BlogResponse>
 
-//    @GET("/api/blogs/{id}")
-//    fun getDetailBlog(
-//        @Path("id") id: String
-//    ): Call<DetailResponse>
-
 
 }

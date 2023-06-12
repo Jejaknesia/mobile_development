@@ -78,26 +78,6 @@ class BlogActivity : AppCompatActivity() {
         }
     }
 
-//    private fun setupAction() {
-//        binding.apply {
-//            rvBlogs.layoutManager = LinearLayoutManager(this@BlogActivity)
-//            rvBlogs.setHasFixedSize(true)
-//            rvBlogs.adapter = blogAdapter
-//
-//
-//
-//            blogViewModel.apply {
-//                dataItem.observe(this@BlogActivity) { blog ->
-//                    if(blog != null) {
-////                        blogAdapter.setListBlog(blog)
-//                        showLoading()
-//                    }
-//                }
-//            }
-//
-//            blogViewModel.getBlogs()
-//        }
-//    }
 
     private fun showLoading() {
         blogViewModel.isLoading.observe(this) { isLoading ->

@@ -1,15 +1,16 @@
 package com.vanessaleo.jejaknesia.data
 
+
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asLiveData
 import com.vanessaleo.jejaknesia.api.ApiService
+import com.vanessaleo.jejaknesia.api.SecondApiService
 import com.vanessaleo.jejaknesia.datastore.UserPreference
+import com.vanessaleo.jejaknesia.model.DataModel
 import com.vanessaleo.jejaknesia.model.UserModel
 import com.vanessaleo.jejaknesia.response.*
-
-
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -17,6 +18,7 @@ import retrofit2.Response
 class JejaknesiaRepository private constructor(
     private val userPref: UserPreference,
     private val apiService: ApiService,
+    private val secondApiService: SecondApiService
 ) {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
@@ -30,16 +32,15 @@ class JejaknesiaRepository private constructor(
     private val _toastMessage = MutableLiveData<Event<String>>()
     val toastMessage: LiveData<Event<String>> = _toastMessage
 
-//    private val _blogResponse = MutableLiveData<BlogResponse>()
-//    val blogResponse: LiveData<BlogResponse> = _blogResponse
-
     private val _dataItem = MutableLiveData<ArrayList<DataItem>>()
+    private val dataItem: LiveData<ArrayList<DataItem>> = _dataItem
+//    val dataItem: LiveData<ArrayList<DataItem>> get() = _dataItem
 
-    //    val dataItem: LiveData<ArrayList<DataItem>> = _dataItem
-    val dataItem: LiveData<ArrayList<DataItem>> get() = _dataItem
+    private val _dataResponse = MutableLiveData<DataResponse>()
+    val dataResponse: LiveData<DataResponse> = _dataResponse
 
-    private val _snackbarText = MutableLiveData<Event<String>>()
-    val snackbarText: LiveData<Event<String>> = _snackbarText
+//    val jsonData = "[\"Tempat Bersejarah\", \"Aktivitas Air\", \"Relaxing\"]" // Replace with your actual JSON data
+//    val requestBody = RequestBody.create("application/json".toMediaTypeOrNull(), jsonData)
 
 
     fun postRegister(name: String, email: String, password: String) {
@@ -92,7 +93,7 @@ class JejaknesiaRepository private constructor(
                     }
                 } else {
                     _toastMessage.value = Event("Invalid email or password")
-                    Log.d(TAG, "onFailure: Invalid email or password}")
+                    Log.d(TAG, "onFailure: Invalid email or password")
                 }
             }
 
@@ -139,6 +140,35 @@ class JejaknesiaRepository private constructor(
     }
 
 
+    fun postData(data: DataModel) {
+        _isLoading.value = true
+
+        val client = secondApiService.postData(data)
+        client.enqueue(object : Callback<DataResponse> {
+            override fun onResponse(call: Call<DataResponse>, response: Response<DataResponse>) {
+                _isLoading.value = false
+
+                if (response.isSuccessful) {
+                    val responseBody = response.body()
+                    if (responseBody != null) {
+                       _dataResponse.value = response.body()
+                        _toastMessage.value = Event(response.body().toString())
+                        Log.d(TAG, "onSuccess : ${response.body()}")
+
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<DataResponse>, t: Throwable) {
+                _isLoading.value = false
+                _toastMessage.value = Event(t.message.toString())
+                Log.d(TAG, "onFailure ${t.message.toString()}")
+            }
+
+        })
+    }
+
+
     fun getUser(): LiveData<UserModel> {
         return userPref.getUser().asLiveData()
     }
@@ -147,13 +177,13 @@ class JejaknesiaRepository private constructor(
         userPref.saveUser(userModel)
     }
 
-    suspend fun login() {
-        userPref.login()
-    }
+
 
     suspend fun logout() {
         userPref.logout()
     }
+
+
 
 
     companion object {
@@ -164,9 +194,10 @@ class JejaknesiaRepository private constructor(
         fun getInstance(
             userPref: UserPreference,
             apiService: ApiService,
+            secondApiService: SecondApiService
         ): JejaknesiaRepository =
             instance ?: synchronized(this) {
-                instance ?: JejaknesiaRepository(userPref, apiService)
+                instance ?: JejaknesiaRepository(userPref, apiService, secondApiService)
             }.also { instance = it }
     }
 }

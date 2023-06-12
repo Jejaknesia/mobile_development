@@ -9,9 +9,9 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/option_bookmark"
-        android:title="@string/bookmark"
-        android:icon="@drawable/ic_baseline_bookmark_24"
+        android:id="@+id/option_dark_mode"
+        android:title="@string/dark_mode"
+        android:icon="@drawable/ic_baseline_dark_mode_24"
         app:showAsAction="always" />
 
     <item

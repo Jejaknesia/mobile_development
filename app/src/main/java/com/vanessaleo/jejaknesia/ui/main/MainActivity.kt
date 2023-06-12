@@ -1,20 +1,24 @@
 package com.vanessaleo.jejaknesia.ui.main
 
-import android.app.DatePickerDialog
 import android.content.Intent
+import android.os.Build.RADIO
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import com.vanessaleo.jejaknesia.R
 import com.vanessaleo.jejaknesia.ViewModelFactory
 import com.vanessaleo.jejaknesia.auth.LoginActivity
 import com.vanessaleo.jejaknesia.databinding.ActivityMainBinding
+import com.vanessaleo.jejaknesia.model.DataModel
+import com.vanessaleo.jejaknesia.ui.CategoryResultActivity
 import com.vanessaleo.jejaknesia.ui.blog.BlogActivity
-import com.vanessaleo.jejaknesia.ui.PreferenceActivity
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,20 +34,46 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        setupAdapter()
         setupViewModel()
         setupAction()
 
+
+//        val selectedOptions = mutableListOf<String>()
+//
+//
+//       binding.btnChosenCategory.setOnClickListener {
+//           if (binding.tempatBersejarah.isChecked) {
+//               selectedOptions.add("Tempat Bersejarah")
+//           }
+//
+//           if (binding.relaxing.isChecked) {
+//               selectedOptions.add("Relaxing")
+//           }
+//       }
+//
+//        Log.d("SELECTION_TEST", selectedOptions.toString())
+//        mainViewModel.postData(DataModel(selectedOptions))
+
+
+//
+
+//            mainViewModel.dataResponse.observe(this) {
+//                Log.d("MainActivity", it.toString())
+//
+//                binding.result.text = it.result.toString()
+//            }
+
+
+
+
+
     }
 
-//    private fun setupAdapter() {
-//
-//    }
+
 
     private fun setupViewModel() {
         viewModelFactory = ViewModelFactory.getInstance(this)
 
-        showLoading()
 
         mainViewModel.getUser().observe(this@MainActivity) { user ->
             if (user.isLogin) {
@@ -53,96 +83,61 @@ class MainActivity : AppCompatActivity() {
                 finish()
             }
         }
-    }
 
-    private fun showLoading() {
-        mainViewModel.isLoading.observe(this) { isLoading ->
-            if (isLoading) {
-                binding.progressBar.visibility = View.VISIBLE
-            } else {
-                binding.progressBar.visibility = View.GONE
-            }
-        }
+
+
+
     }
 
     private fun setupAction() {
-        binding.apply {
+        binding.radioGroupOptions.setOnCheckedChangeListener { _, checkedId ->
+            val selectedRadioButton = findViewById<RadioButton>(checkedId)
+            var data = String()
 
-
-            choosePref.setOnClickListener {
-                val destination = editTextDestination.text.toString().trim()
-                val departureDate = editTextDepartureDate.text.toString().trim()
-                val arrivalDate = editTextArrivalDate.text.toString().trim()
-
-
-                if (destination.isNotEmpty() && departureDate.isNotEmpty() && arrivalDate.isNotEmpty()) {
-
-                    val intent = Intent(this@MainActivity, PreferenceActivity::class.java)
-                    startActivity(intent)
-
-                } else {
-                    if (destination.isEmpty()) {
-                        editTextDestination.error = FIELD_REQUIRED
-
+            if (selectedRadioButton != null) {
+                when (selectedRadioButton.id) {
+                    R.id.tempat_bersejarah -> {
+                        data = binding.tempatBersejarah.text.toString()
+                    }
+                    R.id.relaxing -> {
+                        data = binding.relaxing.text.toString()
+                    }
+                    R.id.aktivitas_air -> {
+                        data = binding.aktivitasAir.text.toString()
                     }
 
-                    if (departureDate.isEmpty()) {
-                        editTextDepartureDate.error = FIELD_REQUIRED
+                    R.id.berkeliling_kota -> {
+                        data = binding.berkelilingKota.text.toString()
                     }
 
-                    if (arrivalDate.isEmpty()) {
-                        editTextArrivalDate.error = FIELD_REQUIRED
+                    R.id.seni_dan_budaya -> {
+                        data = binding.seniDanBudaya.text.toString()
                     }
+
+                    R.id.hutan_flora -> {
+                        data = binding.hutanFlora.text.toString()
+                    }
+
+                    R.id.ruang_terbuka -> {
+                        data = binding.ruangTerbuka.text.toString()
+                    }
+                }
+
+                Log.d("RADIO_BUTTON", data)
+
+                binding.btnChosenCategory.setOnClickListener {
+                    mainViewModel.postData(DataModel(data))
+                    startActivity(Intent(this@MainActivity, CategoryResultActivity::class.java))
 
                 }
-            }
-
-            editTextDepartureDate.setOnClickListener {
-                val calendar = Calendar.getInstance()
-
-                val year = calendar.get(Calendar.YEAR)
-                val month = calendar.get(Calendar.MONTH)
-                val day = calendar.get(Calendar.DAY_OF_MONTH)
-
-                @Suppress("NAME_SHADOWING") val datePickerDialog = DatePickerDialog(
-                    this@MainActivity, { _, year, month, day ->
-                        val date = (day.toString() + "-" + (month + 1) + "-" + year)
-                        editTextDepartureDate.setText(date)
-
-                    },
-                    year,
-                    month,
-                    day
-                )
-
-                datePickerDialog.show()
-
-            }
-
-
-            editTextArrivalDate.setOnClickListener {
-                val calendar = Calendar.getInstance()
-
-                val year = calendar.get(Calendar.YEAR)
-                val month = calendar.get(Calendar.MONTH)
-                val day = calendar.get(Calendar.DAY_OF_MONTH)
-
-                @Suppress("NAME_SHADOWING") val datePickerDialog = DatePickerDialog(
-                    this@MainActivity, { _, year, month, day ->
-                        val date = (day.toString() + "-" + (month + 1) + "-" + year)
-                        editTextArrivalDate.setText(date)
-
-                    },
-                    year,
-                    month,
-                    day
-                )
-
-                datePickerDialog.show()
 
             }
         }
+
     }
+
+
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -156,8 +151,8 @@ class MainActivity : AppCompatActivity() {
                 startActivity(blogPageIntent)
             }
 
-            R.id.option_bookmark -> {
-                // disini tertulis my saved trips
+            R.id.option_dark_mode -> {
+
             }
 
             R.id.option_logout -> {

@@ -26,10 +26,4 @@ class LoginViewModel(private val jejaknesiaRepo: JejaknesiaRepository) : ViewMod
         }
     }
 
-    fun login() {
-        viewModelScope.launch {
-            jejaknesiaRepo.login()
-        }
-    }
-
 }
