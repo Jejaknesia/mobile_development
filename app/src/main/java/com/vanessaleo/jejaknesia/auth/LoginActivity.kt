@@ -27,6 +27,7 @@ class LoginActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
+
         setupViewModel()
         setupAction()
 
@@ -97,7 +98,10 @@ class LoginActivity : AppCompatActivity() {
         binding.tvRegisterHere.setOnClickListener {
             startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
         }
+
+
     }
+
 
     private fun setupLoginAuth() {
         val email = binding.editTextEmail.text.toString()

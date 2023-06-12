@@ -5,18 +5,22 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asLiveData
+import androidx.lifecycle.viewModelScope
 import com.vanessaleo.jejaknesia.api.ApiService
 import com.vanessaleo.jejaknesia.api.SecondApiService
+import com.vanessaleo.jejaknesia.datastore.SettingPreference
 import com.vanessaleo.jejaknesia.datastore.UserPreference
 import com.vanessaleo.jejaknesia.model.DataModel
 import com.vanessaleo.jejaknesia.model.UserModel
 import com.vanessaleo.jejaknesia.response.*
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class JejaknesiaRepository private constructor(
     private val userPref: UserPreference,
+    private val settingPref: SettingPreference,
     private val apiService: ApiService,
     private val secondApiService: SecondApiService
 ) {
@@ -34,13 +38,9 @@ class JejaknesiaRepository private constructor(
 
     private val _dataItem = MutableLiveData<ArrayList<DataItem>>()
     private val dataItem: LiveData<ArrayList<DataItem>> = _dataItem
-//    val dataItem: LiveData<ArrayList<DataItem>> get() = _dataItem
 
     private val _dataResponse = MutableLiveData<DataResponse>()
     val dataResponse: LiveData<DataResponse> = _dataResponse
-
-//    val jsonData = "[\"Tempat Bersejarah\", \"Aktivitas Air\", \"Relaxing\"]" // Replace with your actual JSON data
-//    val requestBody = RequestBody.create("application/json".toMediaTypeOrNull(), jsonData)
 
 
     fun postRegister(name: String, email: String, password: String) {
@@ -177,10 +177,16 @@ class JejaknesiaRepository private constructor(
         userPref.saveUser(userModel)
     }
 
-
-
     suspend fun logout() {
         userPref.logout()
+    }
+
+   fun getThemeSetting(): LiveData<Boolean> {
+       return settingPref.getThemeSetting().asLiveData()
+   }
+
+    suspend fun saveThemeSetting(isDarkModeActive: Boolean){
+        settingPref.saveThemeSetting(isDarkModeActive)
     }
 
 
@@ -193,11 +199,12 @@ class JejaknesiaRepository private constructor(
         private var instance: JejaknesiaRepository? = null
         fun getInstance(
             userPref: UserPreference,
+            settingPref: SettingPreference,
             apiService: ApiService,
             secondApiService: SecondApiService
         ): JejaknesiaRepository =
             instance ?: synchronized(this) {
-                instance ?: JejaknesiaRepository(userPref, apiService, secondApiService)
+                instance ?: JejaknesiaRepository(userPref, settingPref, apiService, secondApiService)
             }.also { instance = it }
     }
 }

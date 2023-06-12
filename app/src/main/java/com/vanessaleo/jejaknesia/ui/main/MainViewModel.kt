@@ -25,15 +25,21 @@ class MainViewModel(private val jejaknesiaRepo: JejaknesiaRepository) : ViewMode
         }
     }
 
+    fun getThemeSettings(): LiveData<Boolean> {
+        return jejaknesiaRepo.getThemeSetting()
+    }
+
+    fun saveThemeSettings(isDarkModeActive: Boolean) {
+        viewModelScope.launch {
+            jejaknesiaRepo.saveThemeSetting(isDarkModeActive)
+        }
+    }
+
     fun postData(data: DataModel) {
         viewModelScope.launch {
             jejaknesiaRepo.postData(data)
         }
     }
 
-//    fun postData(requestBody: RequestBody) {
-//        viewModelScope.launch {
-//            jejaknesiaRepo.postData(requestBody)
-//        }
-//    }
+
 }

@@ -1,23 +1,19 @@
 package com.vanessaleo.jejaknesia.ui.main
 
 import android.content.Intent
-import android.os.Build.RADIO
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.RadioButton
-import android.widget.RadioGroup
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.startActivity
 import com.vanessaleo.jejaknesia.R
 import com.vanessaleo.jejaknesia.ViewModelFactory
 import com.vanessaleo.jejaknesia.auth.LoginActivity
 import com.vanessaleo.jejaknesia.databinding.ActivityMainBinding
 import com.vanessaleo.jejaknesia.model.DataModel
-import com.vanessaleo.jejaknesia.ui.CategoryResultActivity
+import com.vanessaleo.jejaknesia.ui.DarkModeActivity
 import com.vanessaleo.jejaknesia.ui.blog.BlogActivity
 
 class MainActivity : AppCompatActivity() {
@@ -34,37 +30,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         setupViewModel()
         setupAction()
-
-
-//        val selectedOptions = mutableListOf<String>()
-//
-//
-//       binding.btnChosenCategory.setOnClickListener {
-//           if (binding.tempatBersejarah.isChecked) {
-//               selectedOptions.add("Tempat Bersejarah")
-//           }
-//
-//           if (binding.relaxing.isChecked) {
-//               selectedOptions.add("Relaxing")
-//           }
-//       }
-//
-//        Log.d("SELECTION_TEST", selectedOptions.toString())
-//        mainViewModel.postData(DataModel(selectedOptions))
-
-
-//
-
-//            mainViewModel.dataResponse.observe(this) {
-//                Log.d("MainActivity", it.toString())
-//
-//                binding.result.text = it.result.toString()
-//            }
-
-
-
 
 
     }
@@ -83,6 +51,9 @@ class MainActivity : AppCompatActivity() {
                 finish()
             }
         }
+
+
+
 
 
 
@@ -152,19 +123,18 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.option_dark_mode -> {
-
+                Intent(this@MainActivity, DarkModeActivity::class.java).also {
+                    startActivity(it)
+                }
             }
 
             R.id.option_logout -> {
                 mainViewModel.logout()
+
             }
         }
 
         return super.onOptionsItemSelected(item)
     }
 
-    companion object {
-        private const val FIELD_REQUIRED = "Field tidak boleh kosong"
-
-    }
 }

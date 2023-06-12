@@ -1,15 +1,12 @@
-package com.vanessaleo.jejaknesia.ui
+package com.vanessaleo.jejaknesia.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
-import com.vanessaleo.jejaknesia.R
 import com.vanessaleo.jejaknesia.ViewModelFactory
 import com.vanessaleo.jejaknesia.databinding.ActivityCategoryResultBinding
-import com.vanessaleo.jejaknesia.databinding.ActivityMainBinding
-import com.vanessaleo.jejaknesia.ui.main.MainViewModel
 
 class CategoryResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCategoryResultBinding
