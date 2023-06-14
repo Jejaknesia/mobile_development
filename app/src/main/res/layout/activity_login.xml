@@ -19,11 +19,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/quando"
+            android:fontFamily="@font/poppins"
             android:gravity="center"
             android:text="@string/login_page"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="8dp" />
     </androidx.appcompat.widget.Toolbar>
 
     <ImageView
@@ -43,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="16dp"
-        android:fontFamily="@font/quando"
+        android:fontFamily="@font/poppins"
         android:text="@string/tv_login_account"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,7 +68,7 @@
             android:id="@+id/edit_text_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/quando"
+            android:fontFamily="@font/poppins"
             android:hint="@string/edit_text_email"
             android:inputType="textEmailAddress" />
 
@@ -87,7 +89,7 @@
             android:id="@+id/edit_text_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/quando"
+            android:fontFamily="@font/poppins"
             android:hint="@string/edit_text_password"
             android:inputType="textPassword" />
 
@@ -101,7 +103,7 @@
         android:layout_marginTop="50dp"
         android:background="@drawable/btn_style"
         android:backgroundTint="@color/orange"
-        android:fontFamily="@font/quando"
+        android:fontFamily="@font/poppins"
         android:text="@string/login"
         android:textAllCaps="false"
         android:textSize="20sp"
@@ -123,7 +125,7 @@
             android:id="@+id/tv_have_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/quando"
+            android:fontFamily="@font/poppins"
             android:text="@string/dont_have_account"
             android:textAlignment="center"
             android:textSize="12sp" />
@@ -133,7 +135,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:fontFamily="@font/quando"
+            android:fontFamily="@font/poppins"
             android:text="@string/register_here"
             android:textColor="@color/blue"
             android:textSize="12sp" />

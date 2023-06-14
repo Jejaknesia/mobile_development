@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:fontFamily="@font/quando"
+        android:fontFamily="@font/poppins"
         android:text="@string/welcome_name"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:fontFamily="@font/quando"
+        android:fontFamily="@font/poppins"
         android:text="@string/explore_beautiful_world"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@id/iv_logo_without_name"
@@ -46,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:fontFamily="@font/quando"
+        android:fontFamily="@font/poppins"
         android:paddingBottom="16dp"
         android:text="@string/text_only"
         android:textSize="14sp"
@@ -76,7 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:fontFamily="@font/quando"
+            android:fontFamily="@font/poppins"
             android:text="@string/text_category"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -85,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:fontFamily="@font/quando"
+            android:fontFamily="@font/poppins"
             android:text="@string/choose_category" />
 
         <RadioGroup
@@ -98,49 +98,49 @@
                 android:id="@+id/ruang_terbuka"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quando"
+                android:fontFamily="@font/poppins"
                 android:text="@string/ruang_terbuka" />
 
             <RadioButton
                 android:id="@+id/tempat_bersejarah"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quando"
+                android:fontFamily="@font/poppins"
                 android:text="@string/tempat_bersejarah" />
 
             <RadioButton
                 android:id="@+id/seni_dan_budaya"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quando"
+                android:fontFamily="@font/poppins"
                 android:text="@string/seni_dan_budaya" />
 
             <RadioButton
                 android:id="@+id/relaxing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quando"
+                android:fontFamily="@font/poppins"
                 android:text="@string/relaxing" />
 
             <RadioButton
                 android:id="@+id/aktivitas_air"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quando"
+                android:fontFamily="@font/poppins"
                 android:text="@string/aktivitas_air" />
 
             <RadioButton
                 android:id="@+id/hutan_flora"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quando"
+                android:fontFamily="@font/poppins"
                 android:text="@string/hutan_flora" />
 
             <RadioButton
                 android:id="@+id/berkeliling_kota"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quando"
+                android:fontFamily="@font/poppins"
                 android:text="@string/berkeliling_kota" />
 
         </RadioGroup>
@@ -152,7 +152,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/quando"
+            android:fontFamily="@font/poppins"
             android:text="@string/generate_result" />
 
 
