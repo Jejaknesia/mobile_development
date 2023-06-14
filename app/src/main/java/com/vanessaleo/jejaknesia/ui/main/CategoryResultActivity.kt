@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,8 +13,8 @@ import com.vanessaleo.jejaknesia.R
 import com.vanessaleo.jejaknesia.ViewModelFactory
 import com.vanessaleo.jejaknesia.adapter.ListDataAdapter
 import com.vanessaleo.jejaknesia.databinding.ActivityCategoryResultBinding
-import com.vanessaleo.jejaknesia.model.DataModel
 import com.vanessaleo.jejaknesia.response.DataItemItem
+import com.vanessaleo.jejaknesia.ui.maps.MapsActivity
 
 
 class CategoryResultActivity : AppCompatActivity() {
@@ -90,6 +92,23 @@ class CategoryResultActivity : AppCompatActivity() {
                 binding.progressBar.visibility = View.GONE
             }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_option, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.option_map -> {
+                val locationPageIntent = Intent(this@CategoryResultActivity, MapsActivity::class.java)
+                startActivity(locationPageIntent)
+            }
+
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
 

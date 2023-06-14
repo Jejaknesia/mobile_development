@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +16,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Jejaknesia"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDxo_e4RmdFcsXGJqc3qOaqTNY3NJuIur8" />
+
+
+        <activity
+            android:name=".ui.maps.MapsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".ui.main.CategoryDetailActivity"
             android:exported="false">

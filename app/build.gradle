@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
     id 'kotlin-parcelize'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -71,12 +72,15 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
     implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
 
-
     // DataStore
     implementation "androidx.datastore:datastore-preferences:1.0.0"
 
     // PrettyTime
     implementation 'org.ocpsoft.prettytime:prettytime:5.0.4.Final'
+
+    // Maps
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    implementation "androidx.fragment:fragment:1.6.0"
 
     // Testing
     testImplementation 'junit:junit:4.13.2'

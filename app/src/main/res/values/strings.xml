@@ -93,6 +93,9 @@
     <string name="result_detail_page">Result Detail</string>
     <string name="change_mode_text">Kembali untuk melihat perubahan mode</string>
     <string name="generate_result_page">Generate Result</string>
+    <string name="location">Location</string>
+    <string name="title_maps">Lokasi Top Rekomendasi</string>
+    <string name="title_activity_maps">MapsActivity</string>
 
 
 </resources>

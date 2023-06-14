@@ -1,11 +1,16 @@
 package com.vanessaleo.jejaknesia.ui.main
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.vanessaleo.jejaknesia.R
 import com.vanessaleo.jejaknesia.databinding.ActivityCategoryDetailBinding
+import com.vanessaleo.jejaknesia.ui.DarkModeActivity
+import com.vanessaleo.jejaknesia.ui.blog.BlogActivity
 
 class CategoryDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCategoryDetailBinding
@@ -39,6 +44,7 @@ class CategoryDetailActivity : AppCompatActivity() {
                 .into(ivDetailResult)
         }
     }
+
 
     @Suppress("DEPRECATION")
     override fun onSupportNavigateUp(): Boolean {
