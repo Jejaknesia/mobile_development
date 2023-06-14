@@ -8,38 +8,36 @@
     android:paddingVertical="20dp"
     tools:context=".ui.main.MainActivity">
 
-    
-    
     <ImageView
         android:id="@+id/iv_logo_without_name"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/jejaknesia_logo__new_vertic"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/jejaknesia_logo__new_vertic"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/welcome_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/welcome_name"
-            android:textSize="16sp"
-            android:fontFamily="@font/quando"
-            android:textStyle="bold"
-            android:layout_marginStart="8dp"
-            app:layout_constraintStart_toEndOf="@id/iv_logo_without_name"
-            app:layout_constraintTop_toTopOf="@id/iv_logo_without_name" />
+    <TextView
+        android:id="@+id/welcome_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/quando"
+        android:text="@string/welcome_name"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/iv_logo_without_name"
+        app:layout_constraintTop_toTopOf="@id/iv_logo_without_name" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/quando"
         android:text="@string/explore_beautiful_world"
         android:textSize="18sp"
-        android:fontFamily="@font/quando"
-        android:layout_marginStart="8dp"
         app:layout_constraintStart_toEndOf="@id/iv_logo_without_name"
         app:layout_constraintTop_toBottomOf="@id/welcome_name" />
 
@@ -47,14 +45,24 @@
         android:id="@+id/text_only"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/text_only"
-        android:textSize="13sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/quando"
         android:layout_marginTop="32dp"
-       android:paddingBottom="16dp"
-        app:layout_constraintTop_toBottomOf="@id/iv_logo_without_name"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:fontFamily="@font/quando"
+        android:paddingBottom="16dp"
+        android:text="@string/text_only"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_logo_without_name" />
+
+
+    <View
+        android:id="@+id/divider_line"
+        android:layout_width="50dp"
+        android:layout_height="2dp"
+        android:background="@color/blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_only" />
+
 
     <LinearLayout
         android:id="@+id/itinerary_planner"
@@ -67,11 +75,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/quando"
             android:text="@string/text_category"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:fontFamily="@font/quando"
-            android:layout_marginTop="24dp" />
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
@@ -82,16 +90,16 @@
 
         <RadioGroup
             android:id="@+id/radio_group_options"
-            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <RadioButton
                 android:id="@+id/ruang_terbuka"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quando"
-                android:text="@string/ruang_terbuka"/>
+                android:text="@string/ruang_terbuka" />
 
             <RadioButton
                 android:id="@+id/tempat_bersejarah"
@@ -138,7 +146,6 @@
         </RadioGroup>
 
 
-
         <Button
             android:id="@+id/btn_chosen_category"
             android:layout_width="wrap_content"
@@ -150,7 +157,6 @@
 
 
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

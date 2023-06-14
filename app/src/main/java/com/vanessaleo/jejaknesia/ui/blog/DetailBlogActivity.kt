@@ -11,8 +11,6 @@ import com.vanessaleo.jejaknesia.R
 import com.vanessaleo.jejaknesia.databinding.ActivityDetailBlogBinding
 import org.ocpsoft.prettytime.PrettyTime
 import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 import java.util.*
 
 class DetailBlogActivity : AppCompatActivity() {
@@ -53,7 +51,6 @@ class DetailBlogActivity : AppCompatActivity() {
                 .into(ivDetailPhoto)
         }
     }
-
 
 
     @Suppress("DEPRECATION")

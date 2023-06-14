@@ -7,13 +7,29 @@
     tools:context=".ui.main.CategoryResultActivity">
 
     <TextView
-        android:id="@+id/result"
+        android:id="@+id/tv_discover_blog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
+        android:layout_marginVertical="32dp"
+        android:layout_marginStart="20dp"
         android:fontFamily="@font/quando"
+        android:text="@string/top_recommendation"
+        android:textSize="15sp"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_dataPlace"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_discover_blog"
+        tools:listitem="@layout/item_data" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -26,5 +42,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

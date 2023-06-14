@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatDelegate
 import com.vanessaleo.jejaknesia.R
 import com.vanessaleo.jejaknesia.ViewModelFactory
 import com.vanessaleo.jejaknesia.auth.LoginActivity
-import com.vanessaleo.jejaknesia.datastore.SettingPreference
 import com.vanessaleo.jejaknesia.ui.main.MainActivity
 import com.vanessaleo.jejaknesia.ui.main.MainViewModel
 

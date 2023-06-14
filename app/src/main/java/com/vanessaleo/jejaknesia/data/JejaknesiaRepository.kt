@@ -5,15 +5,12 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asLiveData
-import androidx.lifecycle.viewModelScope
 import com.vanessaleo.jejaknesia.api.ApiService
-import com.vanessaleo.jejaknesia.api.SecondApiService
 import com.vanessaleo.jejaknesia.datastore.SettingPreference
 import com.vanessaleo.jejaknesia.datastore.UserPreference
 import com.vanessaleo.jejaknesia.model.DataModel
 import com.vanessaleo.jejaknesia.model.UserModel
 import com.vanessaleo.jejaknesia.response.*
-import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,8 +19,8 @@ class JejaknesiaRepository private constructor(
     private val userPref: UserPreference,
     private val settingPref: SettingPreference,
     private val apiService: ApiService,
-    private val secondApiService: SecondApiService
-) {
+
+    ) {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
@@ -39,9 +36,11 @@ class JejaknesiaRepository private constructor(
     private val _dataItem = MutableLiveData<ArrayList<DataItem>>()
     private val dataItem: LiveData<ArrayList<DataItem>> = _dataItem
 
-    private val _dataResponse = MutableLiveData<DataResponse>()
-    val dataResponse: LiveData<DataResponse> = _dataResponse
+    private val _categoryResponse = MutableLiveData<CategoryResponse>()
+    val categoryResponse: LiveData<CategoryResponse> = _categoryResponse
 
+    private val _dataItemItem = MutableLiveData<ArrayList<DataItemItem>>()
+    val dataItemItem: LiveData<ArrayList<DataItemItem>> = _dataItemItem
 
     fun postRegister(name: String, email: String, password: String) {
         _isLoading.value = true
@@ -143,23 +142,26 @@ class JejaknesiaRepository private constructor(
     fun postData(data: DataModel) {
         _isLoading.value = true
 
-        val client = secondApiService.postData(data)
-        client.enqueue(object : Callback<DataResponse> {
-            override fun onResponse(call: Call<DataResponse>, response: Response<DataResponse>) {
+        val client = apiService.postData(data)
+        client.enqueue(object : Callback<CategoryResponse> {
+            override fun onResponse(
+                call: Call<CategoryResponse>,
+                response: Response<CategoryResponse>
+            ) {
                 _isLoading.value = false
 
                 if (response.isSuccessful) {
                     val responseBody = response.body()
                     if (responseBody != null) {
-                       _dataResponse.value = response.body()
-                        _toastMessage.value = Event(response.body().toString())
-                        Log.d(TAG, "onSuccess : ${response.body()}")
+                        _dataItemItem.value = response.body()?.data
+                        _toastMessage.value = Event(response.body()?.data.toString())
+                        Log.d(TAG, "onSuccess : ${response.body()?.data}")
 
                     }
                 }
             }
 
-            override fun onFailure(call: Call<DataResponse>, t: Throwable) {
+            override fun onFailure(call: Call<CategoryResponse>, t: Throwable) {
                 _isLoading.value = false
                 _toastMessage.value = Event(t.message.toString())
                 Log.d(TAG, "onFailure ${t.message.toString()}")
@@ -181,15 +183,13 @@ class JejaknesiaRepository private constructor(
         userPref.logout()
     }
 
-   fun getThemeSetting(): LiveData<Boolean> {
-       return settingPref.getThemeSetting().asLiveData()
-   }
-
-    suspend fun saveThemeSetting(isDarkModeActive: Boolean){
-        settingPref.saveThemeSetting(isDarkModeActive)
+    fun getThemeSetting(): LiveData<Boolean> {
+        return settingPref.getThemeSetting().asLiveData()
     }
 
-
+    suspend fun saveThemeSetting(isDarkModeActive: Boolean) {
+        settingPref.saveThemeSetting(isDarkModeActive)
+    }
 
 
     companion object {
@@ -201,10 +201,9 @@ class JejaknesiaRepository private constructor(
             userPref: UserPreference,
             settingPref: SettingPreference,
             apiService: ApiService,
-            secondApiService: SecondApiService
         ): JejaknesiaRepository =
             instance ?: synchronized(this) {
-                instance ?: JejaknesiaRepository(userPref, settingPref, apiService, secondApiService)
+                instance ?: JejaknesiaRepository(userPref, settingPref, apiService)
             }.also { instance = it }
     }
 }

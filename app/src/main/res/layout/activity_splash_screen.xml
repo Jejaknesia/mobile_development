@@ -7,7 +7,6 @@
     android:background="@color/white_grey"
     tools:context=".splashscreen.SplashScreenActivity">
 
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="250dp"
@@ -18,8 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,44 +9,43 @@
     android:paddingVertical="20dp"
     tools:context=".auth.LoginActivity">
 
-   <androidx.appcompat.widget.Toolbar
-       android:id="@+id/toolbar"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="@string/login_page"
-           android:gravity="center"
-           android:textStyle="bold"
-           android:fontFamily="@font/quando"
-           android:textSize="24sp" />
-   </androidx.appcompat.widget.Toolbar>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quando"
+            android:gravity="center"
+            android:text="@string/login_page"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
 
     <ImageView
         android:id="@+id/iv_jejaknesia"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginTop="100dp"
+        android:contentDescription="@string/app_name"
         android:scaleType="centerCrop"
         android:src="@drawable/jejaknesia_logo__new_horizon"
-        android:contentDescription="@string/app_name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/toolbar"
-        />
+        app:layout_constraintTop_toTopOf="@id/toolbar" />
 
     <TextView
         android:id="@+id/tv_login_account"
-        android:text="@string/tv_login_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="16dp"
-        android:textSize="20sp"
         android:fontFamily="@font/quando"
+        android:text="@string/tv_login_account"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_jejaknesia"
 
@@ -55,41 +54,41 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/email_edit_text_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_marginTop="30dp"
-        app:startIconDrawable="@drawable/ic_baseline_email_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_login_account">
+        app:layout_constraintTop_toBottomOf="@id/tv_login_account"
+        app:startIconDrawable="@drawable/ic_baseline_email_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_text_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/edit_text_email"
             android:fontFamily="@font/quando"
+            android:hint="@string/edit_text_email"
             android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/password_edit_text_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:passwordToggleEnabled="true"
-        app:startIconDrawable="@drawable/ic_baseline_lock_24"
         android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/email_edit_text_layout">
+        app:layout_constraintTop_toBottomOf="@id/email_edit_text_layout"
+        app:passwordToggleEnabled="true"
+        app:startIconDrawable="@drawable/ic_baseline_lock_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_text_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/edit_text_password"
             android:fontFamily="@font/quando"
+            android:hint="@string/edit_text_password"
             android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -102,10 +101,10 @@
         android:layout_marginTop="50dp"
         android:background="@drawable/btn_style"
         android:backgroundTint="@color/orange"
-        android:textAllCaps="false"
-        android:text="@string/login"
-        android:textSize="20sp"
         android:fontFamily="@font/quando"
+        android:text="@string/login"
+        android:textAllCaps="false"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password_edit_text_layout" />
 
@@ -114,9 +113,9 @@
         android:id="@+id/login_option"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
         android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="@id/btn_login"
         app:layout_constraintTop_toBottomOf="@id/btn_login">
 
@@ -124,9 +123,9 @@
             android:id="@+id/tv_have_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/quando"
             android:text="@string/dont_have_account"
             android:textAlignment="center"
-            android:fontFamily="@font/quando"
             android:textSize="12sp" />
 
         <TextView
@@ -134,10 +133,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="@string/register_here"
-            android:textSize="12sp"
             android:fontFamily="@font/quando"
-            android:textColor="@color/blue" />
+            android:text="@string/register_here"
+            android:textColor="@color/blue"
+            android:textSize="12sp" />
 
 
     </LinearLayout>

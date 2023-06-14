@@ -2,7 +2,6 @@ package com.vanessaleo.jejaknesia.ui.main
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.RadioButton
@@ -30,18 +29,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         setupViewModel()
         setupAction()
 
 
     }
 
-
-
     private fun setupViewModel() {
         viewModelFactory = ViewModelFactory.getInstance(this)
-
 
         mainViewModel.getUser().observe(this@MainActivity) { user ->
             if (user.isLogin) {
@@ -51,11 +46,6 @@ class MainActivity : AppCompatActivity() {
                 finish()
             }
         }
-
-
-
-
-
 
 
     }
@@ -94,8 +84,6 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
 
-                Log.d("RADIO_BUTTON", data)
-
                 binding.btnChosenCategory.setOnClickListener {
                     mainViewModel.postData(DataModel(data))
                     startActivity(Intent(this@MainActivity, CategoryResultActivity::class.java))
@@ -106,8 +94,6 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
-
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

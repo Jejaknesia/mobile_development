@@ -13,6 +13,7 @@ import com.vanessaleo.jejaknesia.adapter.ListBlogAdapter
 import com.vanessaleo.jejaknesia.databinding.ActivityBlogBinding
 import com.vanessaleo.jejaknesia.response.DataItem
 
+
 class BlogActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBlogBinding
     private lateinit var viewModelFactory: ViewModelFactory
@@ -29,7 +30,6 @@ class BlogActivity : AppCompatActivity() {
 
         setupAdapter()
         setupViewModel()
-//        setupAction()
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -50,10 +50,7 @@ class BlogActivity : AppCompatActivity() {
                 startActivity(intentToDetail)
 
             }
-
         })
-
-
     }
 
 

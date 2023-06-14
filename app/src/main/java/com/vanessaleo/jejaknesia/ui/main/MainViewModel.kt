@@ -3,19 +3,17 @@ package com.vanessaleo.jejaknesia.ui.main
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.vanessaleo.jejaknesia.data.Event
 import com.vanessaleo.jejaknesia.data.JejaknesiaRepository
 import com.vanessaleo.jejaknesia.model.DataModel
 import com.vanessaleo.jejaknesia.model.UserModel
-import com.vanessaleo.jejaknesia.response.DataResponse
+import com.vanessaleo.jejaknesia.response.DataItemItem
 import kotlinx.coroutines.launch
 
 class MainViewModel(private val jejaknesiaRepo: JejaknesiaRepository) : ViewModel() {
     val isLoading: LiveData<Boolean> = jejaknesiaRepo.isLoading
-    val dataResponse: LiveData<DataResponse> = jejaknesiaRepo.dataResponse
-    val toastMessage: LiveData<Event<String>> = jejaknesiaRepo.toastMessage
+    val dataItemItem: LiveData<ArrayList<DataItemItem>> = jejaknesiaRepo.dataItemItem
 
-    fun getUser() : LiveData<UserModel> {
+    fun getUser(): LiveData<UserModel> {
         return jejaknesiaRepo.getUser()
     }
 
