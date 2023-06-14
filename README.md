@@ -30,8 +30,6 @@ The source code of Android app of Jejaknesia using Kotlin in order to complete B
   - [Retrofit 2](https://square.github.io/retrofit/)   
   - [Ok Http 3](https://square.github.io/okhttp/) 
   - [DataStore](https://developer.android.com/jetpack/androidx/releases/datastore?hl=id) 
-  - [Ok Http](https://square.github.io/okhttp/) 
-  - [Ok Http](https://square.github.io/okhttp/) 
   - [Google Play services Maps](https://developers.google.com/maps/documentation/android-sdk/get-api-key) 
 
 **Note**: This list includes some of the major dependencies used in the Jejaknesia App. It may not include all the libraries and dependencies used in the project.
